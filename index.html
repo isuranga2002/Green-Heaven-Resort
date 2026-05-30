@@ -3,445 +3,212 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Green Heaven Resort | A Forest Retreat Taking Shape</title>
+    <title>Green Heaven Eco Resort | Nature Luxury Near Sigiriya</title>
     <meta
       name="description"
-      content="Green Heaven Resort is a private nature retreat currently taking shape in Sri Lanka. Discover the vision, view its first cabin, locate the property, and enquire for opening updates."
+      content="Green Heaven Eco Resort is a luxury nature cabana concept near Sigiriya with forest A-frame stays, warm hospitality, dining experiences, gallery, location and opening enquiries."
     />
-    <meta name="theme-color" content="#092c21" />
+    <meta name="theme-color" content="#08281f" />
     <link rel="icon" href="pica/web/green-heaven-mark.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#home" aria-label="Green Heaven Resort home">
+      <a class="brand" href="#home" aria-label="Green Heaven home">
         <img src="pica/web/green-heaven-mark.svg" alt="" />
-        <span>Green Heaven<small>Resort</small></span>
+        <span>Green Heaven<small>Eco Resort</small></span>
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span></span>
         <b>Menu</b>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="#stay">Stay</a>
+        <a href="#home">Home</a>
+        <a href="#rooms">Rooms</a>
         <a href="#experiences">Experiences</a>
+        <a href="#dining">Dining</a>
         <a href="#gallery">Gallery</a>
+        <a href="#about">About</a>
         <a href="#location">Location</a>
-        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <a class="header-cta" href="#enquire">Opening Updates</a>
+      <a class="book-button" href="#booking">Book Now</a>
     </header>
 
     <main id="home">
-      <section class="hero" aria-label="Green Heaven Resort introduction">
-        <div class="hero-copy">
-          <p class="eyebrow">Sri Lanka / New nature retreat</p>
-          <h1>Where stillness finds a home.</h1>
-          <p class="hero-lede">
-            Green Heaven Resort is taking shape among the trees: an intimate
-            hideaway designed for quiet nights, warm light and time in nature.
-          </p>
+      <section class="hero">
+        <img class="hero-bg" src="pica/web/concept-evening-deck.avif" alt="Green Heaven Eco Resort A-frame cabana glowing at night with a timber deck" fetchpriority="high" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="kicker">Welcome to Green Heaven Eco Resort</p>
+          <h1>Escape Into<br />Nature &amp; Luxury</h1>
+          <p>A hidden paradise near Sigiriya, designed around forest cabanas, warm light and peaceful stays.</p>
           <div class="hero-actions">
-            <a class="button button-filled" href="#enquire">Register Interest</a>
-            <a class="button" href="#vision">Discover the Vision</a>
+            <a class="primary-btn" href="#booking">Book Your Escape</a>
           </div>
         </div>
-        <figure class="hero-image">
-          <img
-            src="pica/web/green-heaven-cabin.avif"
-            alt="Illuminated A-frame cabin at Green Heaven Resort surrounded by trees at night"
-            fetchpriority="high"
-          />
-          <figcaption>First glimpse / Green Heaven Resort</figcaption>
-        </figure>
-        <a class="scroll-link" href="#vision">Scroll</a>
+        <form class="booking-bar" id="booking">
+          <label>
+            <span>Your name</span>
+            <input type="text" name="name" placeholder="Full name" required />
+          </label>
+          <label>
+            <span>WhatsApp number</span>
+            <input type="tel" name="phone" placeholder="+94 77 123 4567" required />
+          </label>
+          <label>
+            <span>Check-in</span>
+            <input type="date" name="checkin" value="2026-06-25" required />
+          </label>
+          <label>
+            <span>Check-out</span>
+            <input type="date" name="checkout" value="2026-06-26" required />
+          </label>
+          <label>
+            <span>Guests</span>
+            <select name="guests">
+              <option>2 Adults, 0 Children</option>
+              <option>2 Adults, 1 Child</option>
+              <option>4 Adults</option>
+            </select>
+          </label>
+          <label>
+            <span>Cabana</span>
+            <select name="cabana">
+              <option>Forest A-Frame Cabana</option>
+              <option>Canopy Deck Cabana</option>
+              <option>Evening Glow Retreat</option>
+            </select>
+          </label>
+          <button type="submit">Book via WhatsApp</button>
+        </form>
       </section>
 
-      <section class="statement" id="vision">
-        <p class="eyebrow">A sanctuary in progress</p>
-        <h2>A resort born from forest, light and calm.</h2>
-        <p>
-          Green Heaven is being thoughtfully completed as a retreat that places
-          nature at the centre of every stay. The first A-frame residence offers
-          a preview of an atmosphere shaped by timber warmth, secluded evenings
-          and an immersive green setting.
-        </p>
-      </section>
-
-      <section class="resort-profile" aria-label="Resort introduction">
+      <section class="intro" id="about">
         <div>
-          <p class="eyebrow">Green Heaven Resort</p>
-          <h2>Intimate by design, immersed in nature.</h2>
+          <p class="kicker dark">Welcome to Green Heaven Eco Resort</p>
+          <h2>Where eco living meets boutique comfort.</h2>
+          <p>
+            Green Heaven Eco Resort is being shaped as a nature-first cabana
+            escape with A-frame architecture, forest views, warm hospitality and
+            calm luxury. The finished visuals show the intended guest mood while
+            final facilities and opening dates are confirmed.
+          </p>
+          <a class="outline-btn" href="#rooms">Discover More</a>
         </div>
-        <div class="profile-copy">
-          <p>
-            Envisioned as a peaceful resort escape, Green Heaven will bring
-            guests closer to Sri Lanka's natural quiet through characterful
-            cabin stays and warm, personal hospitality. The illuminated
-            A-frame now taking shape offers a first indication of the resort's
-            considered architectural style.
-          </p>
-          <p>
-            This website introduces the developing concept. Room types,
-            inclusions, dining, activities, rates and opening schedules remain
-            subject to completion and confirmation by the resort.
-          </p>
+        <div class="intro-icons">
+          <article><span>◇</span><strong>Nature</strong><p>Surrounded by lush greenery.</p></article>
+          <article><span>♕</span><strong>Luxury</strong><p>Premium stays with comfort.</p></article>
+          <article><span>♡</span><strong>Hospitality</strong><p>Warm service from the heart.</p></article>
         </div>
       </section>
 
-      <section class="first-look" id="stay">
-        <div class="portrait-frame">
-          <img
-            src="pica/web/concept-cabin-daylight.avif"
-            alt="Photorealistic concept of a completed Green Heaven timber A-frame cabin in daylight"
-            loading="lazy"
-          />
+      <section class="rooms" id="rooms">
+        <div class="section-title">
+          <p class="kicker dark">Featured Cabanas</p>
+          <h2>Choose your private nature stay.</h2>
         </div>
-        <div class="feature-copy">
-          <p class="eyebrow">Finished cabin concept</p>
-          <h2>An A-frame sanctuary beneath the canopy.</h2>
-          <p>
-            A steep timber roofline, glass-fronted living space, generous deck
-            and gentle pathway lighting illustrate the intimate arrival Green
-            Heaven is being designed to offer.
-          </p>
-          <p class="notice">
-            Concept visual inspired by the real cabin photograph. The resort is
-            currently in development; final finishes, accommodation details and
-            opening dates will be announced when confirmed.
-          </p>
-        </div>
-      </section>
-
-      <section class="stay-concepts" aria-label="Planned accommodation concepts">
-        <div class="section-heading centered">
-          <p class="eyebrow">Future accommodation</p>
-          <h2>Stays envisioned for the retreat.</h2>
-          <p>
-            The final room collection is still being developed. These concepts
-            express the style and atmosphere Green Heaven is working towards.
-          </p>
-        </div>
-        <div class="stay-grid">
-          <article class="stay-card featured">
-            <div class="stay-photo">
-              <img src="pica/web/concept-cabin-bedroom.avif" alt="Photorealistic concept bedroom inside the timber A-frame cabin" loading="lazy" />
-            </div>
-            <div>
-              <p class="card-tag">Concept visual / accommodation</p>
-              <h3>A-Frame Cabin Interior</h3>
-              <p>
-                A warm timber bedroom framed by greenery imagines the quiet,
-                restful interior character of a future completed cabin.
-              </p>
-              <span class="availability">Details to be announced</span>
-            </div>
+        <div class="room-grid">
+          <article class="room-card">
+            <img src="pica/web/concept-cabin-bedroom.avif" alt="Luxury A-frame cabana bedroom concept" loading="lazy" />
+            <span>Best Seller</span>
+            <div><h3>Forest A-Frame Cabana</h3><p>Warm timber interiors, king bed and glass views into nature.</p></div>
           </article>
-          <article class="stay-card concept">
-            <p class="card-tag">In planning</p>
-            <h3>Private Retreat Stays</h3>
-            <p>
-              Additional accommodation options may be introduced as the resort
-              grows, designed around privacy, greenery and slow living.
-            </p>
-            <span class="availability">Coming in the resort plan</span>
+          <article class="room-card">
+            <img src="pica/web/concept-cabin-daylight.avif" alt="Private A-frame cabana exterior concept" loading="lazy" />
+            <span>Jungle View</span>
+            <div><h3>Canopy Deck Cabana</h3><p>Private deck living with forest light and quiet morning views.</p></div>
           </article>
-          <article class="stay-card concept">
-            <p class="card-tag">Guest comfort</p>
-            <h3>Thoughtful Essentials</h3>
-            <p>
-              Confirmed in-room comforts, occupancy and guest services will be
-              shared when reservations are ready to open.
-            </p>
-            <span class="availability">Opening information pending</span>
+          <article class="room-card">
+            <img src="pica/web/concept-evening-deck.avif" alt="Evening cabana deck concept" loading="lazy" />
+            <span>Luxury Escape</span>
+            <div><h3>Evening Glow Retreat</h3><p>A romantic deck setting with lanterns, tea and calm night ambience.</p></div>
           </article>
         </div>
       </section>
 
-      <section class="principles" id="amenities" aria-label="Green Heaven resort features">
-        <div class="section-heading">
-          <p class="eyebrow">Planned resort atmosphere</p>
-          <h2>Everything centred on a quieter stay.</h2>
-          <p>
-            Green Heaven's developing brief focuses on experiences suitable for
-            an intimate nature retreat. Final amenities will be confirmed prior
-            to opening.
-          </p>
-        </div>
-        <div class="principle-grid expanded">
-          <article>
-            <span>01</span>
-            <h3>Secluded Lodgings</h3>
-            <p>Accommodation placed within a green and peaceful environment.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Night-time Ambience</h3>
-            <p>Gentle lighting and warm architecture for memorable evenings.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Nature Connection</h3>
-            <p>A setting intended for listening, resting and reconnecting outdoors.</p>
-          </article>
-          <article>
-            <span>04</span>
-            <h3>Personal Welcome</h3>
-            <p>An intimate scale designed around considered guest attention.</p>
-          </article>
-          <article>
-            <span>05</span>
-            <h3>Local Discovery</h3>
-            <p>Future recommendations to explore the region from a calm base.</p>
-          </article>
-          <article>
-            <span>06</span>
-            <h3>Opening Updates</h3>
-            <p>Early interest guests can receive confirmed stay information first.</p>
-          </article>
+      <section class="experience-band" id="experiences">
+        <article>
+          <p class="kicker">Experiences</p>
+          <h2>Slow mornings, forest days and glowing nights.</h2>
+          <p>Enjoy the intended rhythm of Green Heaven: quiet nature walks, private deck moments, local discovery and peaceful evenings inside warm timber cabanas.</p>
+        </article>
+        <img src="pica/web/concept-cabin-lounge.avif" alt="Forest-facing cabana lounge concept" loading="lazy" />
+      </section>
+
+      <section class="dining" id="dining">
+        <img src="pica/web/concept-deck-breakfast.avif" alt="Breakfast served on a private forest cabana deck" loading="lazy" />
+        <div>
+          <p class="kicker dark">Dining</p>
+          <h2>Fresh tastes on the deck.</h2>
+          <p>Breakfast and dining concepts are inspired by Sri Lankan flavours, tropical fruit, warm tea and relaxed service in nature. Final menus will be released before opening.</p>
         </div>
       </section>
 
-      <section class="experiences" id="experiences">
-        <div class="section-heading centered">
-          <p class="eyebrow">Experiences in development</p>
-          <h2>Days shaped by nature, nights lit warmly.</h2>
-          <p>
-            A future stay at Green Heaven is envisioned around gentle moments
-            rather than busy schedules. Availability will depend on the final
-            completed guest offering.
-          </p>
-        </div>
-        <div class="experience-grid">
-          <article>
-            <p class="card-tag">Morning</p>
-            <h3>Slow Forest Mornings</h3>
-            <p>Wake into greenery, quiet air and an unhurried start to the day.</p>
-          </article>
-          <article>
-            <p class="card-tag">Daytime</p>
-            <h3>Nature Time</h3>
-            <p>Spaces imagined for restful pauses and time spent close to the setting.</p>
-          </article>
-          <article>
-            <p class="card-tag">Evening</p>
-            <h3>Cabin Light Nights</h3>
-            <p>Return to the glow of the A-frame after a calm day in the surroundings.</p>
-          </article>
-          <article>
-            <p class="card-tag">Discovery</p>
-            <h3>Local Journeys</h3>
-            <p>Suggested nearby explorations can be curated once guest services launch.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="hospitality">
-        <div class="hospitality-card">
-          <img src="pica/web/concept-deck-breakfast.avif" alt="Photorealistic concept of breakfast served on a forest-facing cabin deck" loading="lazy" />
-          <div class="hospitality-panel">
-            <p class="eyebrow">Dining concept visual</p>
-            <h2>Tastes of a peaceful stay.</h2>
-            <p>
-              Green Heaven is considering a simple, fresh approach to guest
-              dining that suits quiet mornings and relaxed evenings. Menus,
-              service times and inclusions will be confirmed for opening.
-            </p>
-          </div>
-        </div>
-        <div class="hospitality-card dark">
-          <img src="pica/web/concept-evening-deck.avif" alt="Photorealistic concept of an evening cabin deck with lounge chairs and lantern light" loading="lazy" />
-          <div class="hospitality-panel dark">
-            <p class="eyebrow">Wellbeing concept visual</p>
-            <h2>Room to breathe.</h2>
-            <p>
-              The surrounding nature and private cabin atmosphere inspire a
-              slower rhythm: rest, reflection and meaningful time away from the
-              everyday. Future wellness offerings are not yet confirmed.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="quote-band">
-        <p>“A new retreat is growing quietly in the heart of green.”</p>
-        <span>Green Heaven Resort</span>
-      </section>
-
-      <section class="gallery-story" id="gallery">
-        <div class="section-heading centered">
-          <p class="eyebrow">Visual journal</p>
-          <h2>The completed-stay vision.</h2>
-          <p>
-            These photorealistic concept views are inspired by the resort's
-            authentic first cabin image and present the intended mood while
-            construction advances.
-          </p>
+      <section class="gallery" id="gallery">
+        <div class="section-title">
+          <p class="kicker dark">Gallery</p>
+          <h2>Concept visuals inspired by the real cabana.</h2>
         </div>
         <div class="gallery-grid">
-          <figure class="gallery-tall">
-            <img src="pica/web/concept-cabin-lounge.avif" alt="Photorealistic concept of an A-frame cabin living lounge facing the forest" loading="lazy" />
-            <figcaption>Concept visual / forest-facing lounge</figcaption>
-          </figure>
-          <figure class="gallery-detail gallery-roof">
-            <img src="pica/web/concept-cabin-bathroom.avif" alt="Photorealistic concept of the cabin bathroom with stone and teak details" loading="lazy" />
-            <figcaption>Concept visual / natural-stone bathroom</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="opening-path" id="opening">
-        <div class="section-heading">
-          <p class="eyebrow">The opening journey</p>
-          <h2>Follow the retreat as it comes to life.</h2>
-        </div>
-        <div class="path-steps">
-          <article>
-            <span>Now</span>
-            <h3>Building the vision</h3>
-            <p>The first cabin image introduces the Green Heaven identity and setting.</p>
-          </article>
-          <article>
-            <span>Next</span>
-            <h3>Revealing the stay</h3>
-            <p>Accommodation specifications and completed spaces will be published.</p>
-          </article>
-          <article>
-            <span>Then</span>
-            <h3>Opening enquiries</h3>
-            <p>Rates, dates, policies and reservation options will be confirmed.</p>
-          </article>
+          <img src="pica/web/concept-cabin-daylight.avif" alt="Daylight cabana concept" loading="lazy" />
+          <img src="pica/web/concept-cabin-bedroom.avif" alt="Bedroom concept" loading="lazy" />
+          <img src="pica/web/concept-deck-breakfast.avif" alt="Dining deck concept" loading="lazy" />
+          <img src="pica/web/concept-cabin-bathroom.avif" alt="Cabana bathroom concept" loading="lazy" />
         </div>
       </section>
 
       <section class="location" id="location">
-        <div class="location-copy">
-          <p class="eyebrow">Find Green Heaven</p>
-          <h2>Your path to the retreat.</h2>
-          <p>
-            Explore the resort location on the map. Detailed arrival guidance
-            and guest information will be shared ahead of opening.
-          </p>
-          <a
-            class="button button-dark"
-            href="https://www.google.com/maps/search/?api=1&amp;query=Green+Heaven+Resort"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Open in Google Maps
-          </a>
-        </div>
-        <div class="map-frame">
-          <iframe
-            title="Map showing Green Heaven Resort location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.5465404269576!2d80.7393357!3d8.045596300000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afc9f8a8078e681%3A0x4e79242f8c48124d!2sGreen%20Heaven%20Resort!5e0!3m2!1sen!2slk!4v1779727677267!5m2!1sen!2slk"
-            loading="lazy"
-            allowfullscreen=""
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </section>
-
-      <section class="faq" id="faq">
-        <div class="section-heading centered">
-          <p class="eyebrow">Good to know</p>
-          <h2>Questions before opening.</h2>
-        </div>
-        <div class="faq-grid">
-          <details open>
-            <summary>Is Green Heaven Resort accepting bookings now?</summary>
-            <p>
-              The resort is currently being completed. Guests can submit an
-              opening enquiry to receive confirmed booking information when available.
-            </p>
-          </details>
-          <details>
-            <summary>What accommodation is available?</summary>
-            <p>
-              The first shared image reveals an A-frame cabin concept. Final
-              categories, guest capacity and room details will be announced later.
-            </p>
-          </details>
-          <details>
-            <summary>Which facilities and services are confirmed?</summary>
-            <p>
-              Facilities, meals, activities and service inclusions have not yet
-              been confirmed for publication while development continues.
-            </p>
-          </details>
-          <details>
-            <summary>Where is the resort located?</summary>
-            <p>
-              The resort's submitted Google Maps location is displayed above,
-              with a direct link available for navigation and exploration.
-            </p>
-          </details>
-          <details>
-            <summary>How can I receive opening news?</summary>
-            <p>
-              Complete the enquiry form with your preferred contact details and
-              interest, ready for the resort team to follow up when launched.
-            </p>
-          </details>
-        </div>
-      </section>
-
-      <section class="enquiry" id="enquire">
         <div>
-          <p class="eyebrow">Opening enquiries</p>
-          <h2>Be among the first to hear.</h2>
-          <p>
-            Share your interest in staying at Green Heaven. As rooms, opening
-            dates and booking information become available, the resort can
-            welcome early enquiries first.
-          </p>
-          <div class="enquiry-notes">
-            <p><strong>Stay enquiries</strong> Register interest in future accommodation.</p>
-            <p><strong>Opening news</strong> Request notification when details are released.</p>
-            <p><strong>Partnerships</strong> Introduce event or hospitality opportunities.</p>
-          </div>
+          <p class="kicker dark">Location</p>
+          <h2>A hidden paradise near Sigiriya.</h2>
+          <p>Use the map to explore the submitted Green Heaven Eco Resort location. Full arrival instructions will be shared with confirmed opening details.</p>
+          <a class="outline-btn" href="https://www.google.com/maps/search/?api=1&amp;query=8.0455963,80.7393357" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+        </div>
+        <iframe
+          title="Map showing Green Heaven Eco Resort location"
+          src="https://www.google.com/maps?q=8.0455963,80.7393357&amp;hl=en&amp;z=16&amp;output=embed"
+          loading="lazy"
+          allowfullscreen=""
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </section>
+
+      <section class="contact" id="contact">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2>Book direct and get the best opening updates.</h2>
+          <p>Send your preferred travel dates, guest count and questions. This is an opening-interest request until final reservations are released.</p>
         </div>
         <form class="contact-form">
-          <label>
-            Your name
-            <input type="text" name="name" placeholder="Full name" required />
-          </label>
-          <label>
-            Email or phone
-            <input type="text" name="contact" placeholder="Preferred contact" required />
-          </label>
-          <label>
-            What would you like to know?
-            <textarea name="message" rows="4" placeholder="Future stay dates or questions"></textarea>
-          </label>
-          <button class="button button-filled" type="submit">Request Updates</button>
+          <input type="text" name="name" placeholder="Full name" required />
+          <input type="tel" name="phone" placeholder="WhatsApp number" required />
+          <input type="text" name="dates" placeholder="Preferred dates" required />
+          <select name="cabana">
+            <option>Forest A-Frame Cabana</option>
+            <option>Canopy Deck Cabana</option>
+            <option>Evening Glow Retreat</option>
+          </select>
+          <textarea name="message" rows="4" placeholder="Dates, guests and special requests"></textarea>
+          <button type="submit">Send via WhatsApp</button>
           <p class="form-status" aria-live="polite"></p>
-          <p class="form-note">
-            Opening-interest request only. A booking is not confirmed until
-            official reservation details are released.
-          </p>
         </form>
       </section>
     </main>
 
+    <a class="whatsapp-float" href="https://wa.me/94771234567?text=Hello%20Green%20Heaven%20Eco%20Resort%2C%20I%20would%20like%20to%20make%20a%20booking%20enquiry." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">☘</a>
+
     <footer class="site-footer">
-      <a class="footer-brand" href="#home">
-        <img src="pica/web/green-heaven-mark.svg" alt="" />
-        <span>Green Heaven <small>Resort</small></span>
-      </a>
-      <p>A nature retreat taking shape in Sri Lanka.</p>
-      <div class="footer-links">
-        <a href="#stay">Stay</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#location">Location</a>
-        <a href="#enquire">Enquire</a>
-      </div>
+      <p>Book direct &amp; get the best price</p>
+      <p><a href="https://wa.me/94771234567?text=Hello%20Green%20Heaven%20Eco%20Resort%2C%20I%20would%20like%20to%20make%20a%20booking%20enquiry." target="_blank" rel="noopener noreferrer">WhatsApp: +94 77 123 4567</a></p>
+      <p>Email: info@greenheavenresort.lk</p>
+      <p><a href="https://www.google.com/maps/search/?api=1&amp;query=8.0455963,80.7393357" target="_blank" rel="noopener noreferrer">Open Google Maps</a></p>
     </footer>
 
     <script src="script.js"></script>
