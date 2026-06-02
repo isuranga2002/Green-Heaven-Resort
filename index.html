@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Noto+Sans+SC:wght@400;500;700;900&amp;family=Noto+Sans+Sinhala:wght@400;500;700;800&amp;family=Noto+Serif+SC:wght@600;700&amp;family=Noto+Serif+Sinhala:wght@600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -26,150 +26,234 @@
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span></span>
-        <b>Menu</b>
+        <b data-i18n="nav.menu">Menu</b>
       </button>
       <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#rooms">Rooms</a>
-        <a href="#experiences">Experiences</a>
-        <a href="#dining">Dining</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#about">About</a>
-        <a href="#location">Location</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" data-i18n="nav.home">Home</a>
+        <a href="#rooms" data-i18n="nav.rooms">Rooms</a>
+        <a href="#experiences" data-i18n="nav.experiences">Experiences</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#dining" data-i18n="nav.dining">Dining</a>
+        <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#location" data-i18n="nav.location">Location</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
-      <a class="book-button" href="#booking">Book Now</a>
+      <label class="language-control">
+        <span data-i18n="language.label">Language</span>
+        <select id="language-select" aria-label="Change language">
+          <option value="en">English</option>
+          <option value="si">Sinhala</option>
+          <option value="fr">French</option>
+          <option value="de">German</option>
+          <option value="zh">Chinese</option>
+        </select>
+      </label>
+      <a class="book-button" href="#booking" data-i18n="nav.book">Book Now</a>
     </header>
 
     <main id="home">
       <section class="hero">
-        <img class="hero-bg" src="pica/web/concept-evening-deck.avif" alt="Green Heaven Eco Resort A-frame cabana glowing at night with a timber deck" fetchpriority="high" />
+        <img class="hero-bg" src="pica/web/concept-evening-deck.avif" alt="Green Heaven Eco Resort A-frame forest stay glowing at night with an outdoor sitting area" fetchpriority="high" />
         <div class="hero-overlay"></div>
         <div class="hero-content">
-          <p class="kicker">Welcome to Green Heaven Eco Resort</p>
-          <h1>Escape Into<br />Nature &amp; Luxury</h1>
-          <p>A hidden paradise near Sigiriya, designed around forest cabanas, warm light and peaceful stays.</p>
+          <p class="kicker" data-i18n="hero.kicker">Welcome to Green Heaven Eco Resort</p>
+          <h1 data-i18n-html="hero.title">Escape Into<br />Nature &amp; Luxury</h1>
+          <p data-i18n="hero.copy">A hidden paradise near Sigiriya, designed around forest cabanas, warm light and peaceful stays.</p>
           <div class="hero-actions">
-            <a class="primary-btn" href="#booking">Book Your Escape</a>
+            <a class="primary-btn" href="#booking" data-i18n="hero.cta">Book Your Escape</a>
           </div>
         </div>
         <form class="booking-bar" id="booking">
           <label>
-            <span>Your name</span>
-            <input type="text" name="name" placeholder="Full name" required />
+            <span data-i18n="form.name">Name</span>
+            <input type="text" name="name" placeholder="Full name" data-i18n-placeholder="placeholder.name" required />
           </label>
           <label>
-            <span>WhatsApp number</span>
+            <span data-i18n="form.phone">WhatsApp number</span>
             <input type="tel" name="phone" placeholder="+94 77 123 4567" required />
           </label>
           <label>
-            <span>Check-in</span>
-            <input type="date" name="checkin" value="2026-06-25" required />
+            <span data-i18n="form.date">Date</span>
+            <input type="date" name="date" required />
           </label>
           <label>
-            <span>Check-out</span>
-            <input type="date" name="checkout" value="2026-06-26" required />
+            <span data-i18n="form.persons">Person</span>
+            <input type="number" name="persons" min="1" placeholder="2" data-i18n-placeholder="placeholder.persons" required />
           </label>
           <label>
-            <span>Guests</span>
-            <select name="guests">
-              <option>2 Adults, 0 Children</option>
-              <option>2 Adults, 1 Child</option>
-              <option>4 Adults</option>
+            <span data-i18n="form.package">Package</span>
+            <select name="package">
+              <option data-i18n="package.cabana">CABANA ONLY</option>
+              <option data-i18n="package.dayout">DAYOUT</option>
+              <option data-i18n="package.bb">BB</option>
+              <option data-i18n="package.hb">HB</option>
+              <option data-i18n="package.fb">FB</option>
             </select>
           </label>
           <label>
-            <span>Cabana</span>
-            <select name="cabana">
-              <option>Forest A-Frame Cabana</option>
-              <option>Canopy Deck Cabana</option>
-              <option>Evening Glow Retreat</option>
+            <span data-i18n="form.airport">Airport pickup</span>
+            <select name="airport">
+              <option data-i18n="option.no">No</option>
+              <option data-i18n="option.yes">Yes</option>
+              <option data-i18n="option.confirm">Need details</option>
             </select>
           </label>
-          <button type="submit">Book via WhatsApp</button>
+          <button type="submit" data-i18n="form.bookWhatsapp">Book via WhatsApp</button>
         </form>
       </section>
 
       <section class="intro" id="about">
         <div>
-          <p class="kicker dark">Welcome to Green Heaven Eco Resort</p>
-          <h2>Where eco living meets boutique comfort.</h2>
-          <p>
+          <p class="kicker dark" data-i18n="intro.kicker">Welcome to Green Heaven Eco Resort</p>
+          <h2 data-i18n="intro.title">Where eco living meets boutique comfort.</h2>
+          <p data-i18n="intro.copy">
             Green Heaven Eco Resort is being shaped as a nature-first cabana
             escape with A-frame architecture, forest views, warm hospitality and
             calm luxury. The finished visuals show the intended guest mood while
             final facilities and opening dates are confirmed.
           </p>
-          <a class="outline-btn" href="#rooms">Discover More</a>
+          <a class="outline-btn" href="#rooms" data-i18n="intro.cta">Discover More</a>
         </div>
         <div class="intro-icons">
-          <article><span>◇</span><strong>Nature</strong><p>Surrounded by lush greenery.</p></article>
-          <article><span>♕</span><strong>Luxury</strong><p>Premium stays with comfort.</p></article>
-          <article><span>♡</span><strong>Hospitality</strong><p>Warm service from the heart.</p></article>
+          <article><span>01</span><strong data-i18n="intro.nature">Nature</strong><p data-i18n="intro.natureCopy">Surrounded by lush greenery.</p></article>
+          <article><span>02</span><strong data-i18n="intro.luxury">Luxury</strong><p data-i18n="intro.luxuryCopy">Premium stays with comfort.</p></article>
+          <article><span>03</span><strong data-i18n="intro.hospitality">Hospitality</strong><p data-i18n="intro.hospitalityCopy">Warm service from the heart.</p></article>
         </div>
       </section>
 
       <section class="rooms" id="rooms">
         <div class="section-title">
-          <p class="kicker dark">Featured Cabanas</p>
-          <h2>Choose your private nature stay.</h2>
+          <p class="kicker dark" data-i18n="rooms.kicker">Featured Cabanas</p>
+          <h2 data-i18n="rooms.title">Choose your private nature stay.</h2>
         </div>
         <div class="room-grid">
           <article class="room-card">
             <img src="pica/web/concept-cabin-bedroom.avif" alt="Luxury A-frame cabana bedroom concept" loading="lazy" />
-            <span>Best Seller</span>
-            <div><h3>Forest A-Frame Cabana</h3><p>Warm timber interiors, king bed and glass views into nature.</p></div>
+            <span data-i18n="rooms.card1.tag">Best Seller</span>
+            <div><h3 data-i18n="rooms.card1.title">Forest A-Frame Stay</h3><p data-i18n="rooms.card1.copy">Warm timber interiors, a king-size bed and wide glass views into nature.</p></div>
           </article>
           <article class="room-card">
             <img src="pica/web/concept-cabin-daylight.avif" alt="Private A-frame cabana exterior concept" loading="lazy" />
-            <span>Jungle View</span>
-            <div><h3>Canopy Deck Cabana</h3><p>Private deck living with forest light and quiet morning views.</p></div>
+            <span data-i18n="rooms.card2.tag">Jungle View</span>
+            <div><h3 data-i18n="rooms.card2.title">Canopy View Stay</h3><p data-i18n="rooms.card2.copy">A private outdoor sitting area with forest light and quiet morning views.</p></div>
           </article>
           <article class="room-card">
-            <img src="pica/web/concept-evening-deck.avif" alt="Evening cabana deck concept" loading="lazy" />
-            <span>Luxury Escape</span>
-            <div><h3>Evening Glow Retreat</h3><p>A romantic deck setting with lanterns, tea and calm night ambience.</p></div>
+            <img src="pica/web/concept-evening-deck.avif" alt="Evening forest stay concept with warm outdoor lighting" loading="lazy" />
+            <span data-i18n="rooms.card3.tag">Luxury Escape</span>
+            <div><h3 data-i18n="rooms.card3.title">Evening Glow Retreat</h3><p data-i18n="rooms.card3.copy">A romantic outdoor setting with lanterns, tea and a calm night ambience.</p></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="stay-details" id="packages">
+        <div class="section-title">
+          <p class="kicker dark" data-i18n="stay.kicker">Stay Details</p>
+          <h2 data-i18n="stay.title">Everything guests need before booking.</h2>
+        </div>
+        <div class="detail-grid">
+          <article class="detail-panel">
+            <span>01</span>
+            <h3 data-i18n="stay.packagesTitle">Packages</h3>
+            <ul>
+              <li><strong data-i18n="package.cabana">CABANA ONLY</strong><p data-i18n="stay.packageCabana">Private forest stay only.</p></li>
+              <li><strong data-i18n="package.dayout">DAYOUT</strong><p data-i18n="stay.packageDayout">Day visit with nature time and arranged meals.</p></li>
+              <li><strong data-i18n="package.bb">BB</strong><p data-i18n="stay.packageBb">Stay with breakfast included.</p></li>
+              <li><strong data-i18n="package.hb">HB</strong><p data-i18n="stay.packageHb">Stay with breakfast and dinner.</p></li>
+              <li><strong data-i18n="package.fb">FB</strong><p data-i18n="stay.packageFb">Stay with breakfast, lunch and dinner.</p></li>
+            </ul>
+          </article>
+          <article class="detail-panel">
+            <span>02</span>
+            <h3 data-i18n="stay.nearbyTitle">Nearby Places</h3>
+            <ul>
+              <li><strong>Habarana Lake</strong><p>1.19 km</p></li>
+              <li><strong>Sigiriya Temple</strong><p>9.67 km</p></li>
+              <li><strong>Pidurangala Rock</strong><p>9.3 km</p></li>
+              <li><strong>Minneriya National Park</strong><p>12.12 km</p></li>
+              <li><strong>Dambulla Cave Temple</strong><p>23.31 km</p></li>
+            </ul>
+          </article>
+          <article class="detail-panel">
+            <span>03</span>
+            <h3 data-i18n="stay.facilitiesTitle">Facilities</h3>
+            <ul>
+              <li data-i18n="stay.facilityStay">Private nature stay</li>
+              <li data-i18n="stay.facilityBath">Attached bathroom</li>
+              <li data-i18n="stay.facilityDining">Outdoor dining arrangement</li>
+              <li data-i18n="stay.facilityParking">Parking support</li>
+              <li data-i18n="stay.facilityPickup">Airport pickup on request</li>
+            </ul>
+          </article>
+          <article class="detail-panel">
+            <span>04</span>
+            <h3 data-i18n="stay.policiesTitle">Policies</h3>
+            <ul>
+              <li data-i18n="stay.policyReserve">Advance reservation is required.</li>
+              <li data-i18n="stay.policyConfirm">Package price and availability are confirmed by WhatsApp.</li>
+              <li data-i18n="stay.policyNature">Please respect the natural surroundings.</li>
+              <li data-i18n="stay.policyFood">Meal requests should be shared before arrival.</li>
+              <li data-i18n="stay.policyPickup">Airport pickup must be requested in advance.</li>
+            </ul>
           </article>
         </div>
       </section>
 
       <section class="experience-band" id="experiences">
         <article>
-          <p class="kicker">Experiences</p>
-          <h2>Slow mornings, forest days and glowing nights.</h2>
-          <p>Enjoy the intended rhythm of Green Heaven: quiet nature walks, private deck moments, local discovery and peaceful evenings inside warm timber cabanas.</p>
+          <p class="kicker" data-i18n="experience.kicker">Experiences</p>
+          <h2 data-i18n="experience.title">Slow mornings, forest days and glowing nights.</h2>
+          <p data-i18n="experience.copy">Enjoy the rhythm of Green Heaven: quiet nature walks, private outdoor moments, local discovery and peaceful evenings in warm timber stays.</p>
         </article>
         <img src="pica/web/concept-cabin-lounge.avif" alt="Forest-facing cabana lounge concept" loading="lazy" />
       </section>
 
+      <section class="services" id="services">
+        <div class="section-title">
+          <p class="kicker dark" data-i18n="services.kicker">Our Services</p>
+          <h2 data-i18n="services.title">Experiences we arrange.</h2>
+        </div>
+        <div class="service-grid" aria-label="Experiences we arrange">
+          <article data-i18n="services.safari">Minneriya / Kaudulla Jeep Safari</article>
+          <article data-i18n="services.village">Traditional Village Tours</article>
+          <article data-i18n="services.boat">Scenic Boat Ride Experience</article>
+          <article data-i18n="services.bbq">BBQ Night Experience</article>
+          <article data-i18n="services.romantic">Romantic Dinner Setup</article>
+          <article data-i18n="services.birds">Bird Watching Tours</article>
+          <article data-i18n="services.bicycle">Bicycle Tours Around Nature</article>
+          <article data-i18n="services.sunrise">Sunrise and Sunset Nature Experiences</article>
+          <article data-i18n="services.cooking">Traditional Cooking Class</article>
+        </div>
+      </section>
+
       <section class="dining" id="dining">
-        <img src="pica/web/concept-deck-breakfast.avif" alt="Breakfast served on a private forest cabana deck" loading="lazy" />
+        <img src="pica/web/concept-deck-breakfast.avif" alt="Breakfast served in a private forest outdoor dining area" loading="lazy" />
         <div>
-          <p class="kicker dark">Dining</p>
-          <h2>Fresh tastes on the deck.</h2>
-          <p>Breakfast and dining concepts are inspired by Sri Lankan flavours, tropical fruit, warm tea and relaxed service in nature. Final menus will be released before opening.</p>
+          <p class="kicker dark" data-i18n="dining.kicker">Dining</p>
+          <h2 data-i18n="dining.title">Fresh tastes in nature.</h2>
+          <p data-i18n="dining.copy">Breakfast and dining concepts are inspired by Sri Lankan flavours, tropical fruit, warm tea and relaxed service in nature. Final menus will be released before opening.</p>
         </div>
       </section>
 
       <section class="gallery" id="gallery">
         <div class="section-title">
-          <p class="kicker dark">Gallery</p>
-          <h2>Concept visuals inspired by the real cabana.</h2>
+          <p class="kicker dark" data-i18n="gallery.kicker">Gallery</p>
+          <h2 data-i18n="gallery.title">Concept visuals inspired by the real cabana.</h2>
         </div>
         <div class="gallery-grid">
           <img src="pica/web/concept-cabin-daylight.avif" alt="Daylight cabana concept" loading="lazy" />
           <img src="pica/web/concept-cabin-bedroom.avif" alt="Bedroom concept" loading="lazy" />
-          <img src="pica/web/concept-deck-breakfast.avif" alt="Dining deck concept" loading="lazy" />
+          <img src="pica/web/concept-deck-breakfast.avif" alt="Outdoor forest dining concept" loading="lazy" />
           <img src="pica/web/concept-cabin-bathroom.avif" alt="Cabana bathroom concept" loading="lazy" />
         </div>
       </section>
 
       <section class="location" id="location">
         <div>
-          <p class="kicker dark">Location</p>
-          <h2>A hidden paradise near Sigiriya.</h2>
-          <p>Use the map to explore the submitted Green Heaven Eco Resort location. Full arrival instructions will be shared with confirmed opening details.</p>
-          <a class="outline-btn" href="https://www.google.com/maps/search/?api=1&amp;query=8.0455963,80.7393357" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+          <p class="kicker dark" data-i18n="location.kicker">Location</p>
+          <h2 data-i18n="location.title">A hidden paradise near Sigiriya.</h2>
+          <p data-i18n="location.copy">Use the map to explore the submitted Green Heaven Eco Resort location. Full arrival instructions will be shared with confirmed opening details.</p>
+          <a class="outline-btn" href="https://www.google.com/maps/search/?api=1&amp;query=8.0455963,80.7393357" target="_blank" rel="noopener noreferrer" data-i18n="location.map">Open in Google Maps</a>
         </div>
         <iframe
           title="Map showing Green Heaven Eco Resort location"
@@ -180,35 +264,81 @@
         ></iframe>
       </section>
 
+      <section class="nearby" id="nearby">
+        <div class="section-title">
+          <p class="kicker dark" data-i18n="nearby.kicker">What's nearby</p>
+          <h2 data-i18n="nearby.title">Landmarks around Green Heaven.</h2>
+        </div>
+        <div class="nearby-grid">
+          <article>
+            <h3 data-i18n="nearby.popular">Most popular landmarks</h3>
+            <dl>
+              <div><dt>Pidurangala Rock</dt><dd>9.3 km</dd></div>
+              <div><dt>Sigiriya Temple</dt><dd>9.67 km</dd></div>
+              <div><dt>Archaeological Museum</dt><dd>9.98 km</dd></div>
+              <div><dt>Citadel of Sigiriya - Lion Rock</dt><dd>10.15 km</dd></div>
+              <div><dt>Pidurangala Temple</dt><dd>10.45 km</dd></div>
+              <div><dt>Sigiri Art Gallery</dt><dd>10.9 km</dd></div>
+              <div><dt>Kimbissa Buddhist Temple</dt><dd>11.99 km</dd></div>
+              <div><dt>Minneriya National Park</dt><dd>12.12 km</dd></div>
+              <div><dt>Dambulla Cave Temple</dt><dd>23.31 km</dd></div>
+            </dl>
+          </article>
+          <article>
+            <h3 data-i18n="nearby.closest">Closest landmarks</h3>
+            <dl>
+              <div><dt>Habarana Lake</dt><dd>1.19 km</dd></div>
+              <div><dt>Suwamadura pharmacy and Medical centre</dt><dd>1.95 km</dd></div>
+              <div><dt>Habarana Hospital</dt><dd>2.07 km</dd></div>
+              <div><dt>Palugaswewa</dt><dd>3.19 km</dd></div>
+              <div><dt>Hiriwadunna Wewa</dt><dd>3.21 km</dd></div>
+              <div><dt>Habarana</dt><dd>3.59 km</dd></div>
+              <div><dt>Eriga Oya</dt><dd>6.15 km</dd></div>
+              <div><dt>Rambawala Wewa</dt><dd>6.86 km</dd></div>
+              <div><dt>Titiyakola Wewa</dt><dd>7.99 km</dd></div>
+              <div><dt>Tarane wewa</dt><dd>8.5 km</dd></div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
       <section class="contact" id="contact">
         <div>
-          <p class="kicker">Contact</p>
-          <h2>Book direct and get the best opening updates.</h2>
-          <p>Send your preferred travel dates, guest count and questions. This is an opening-interest request until final reservations are released.</p>
+          <p class="kicker" data-i18n="contact.kicker">Contact</p>
+          <h2 data-i18n="contact.title">Book direct and get the best opening updates.</h2>
+          <p data-i18n="contact.copy">Send your preferred travel date, guest count and questions. This is an opening-interest request until final reservations are released.</p>
         </div>
         <form class="contact-form">
-          <input type="text" name="name" placeholder="Full name" required />
-          <input type="tel" name="phone" placeholder="WhatsApp number" required />
-          <input type="text" name="dates" placeholder="Preferred dates" required />
-          <select name="cabana">
-            <option>Forest A-Frame Cabana</option>
-            <option>Canopy Deck Cabana</option>
-            <option>Evening Glow Retreat</option>
+          <input type="text" name="name" placeholder="Full name" data-i18n-placeholder="placeholder.name" required />
+          <input type="tel" name="phone" placeholder="WhatsApp number" data-i18n-placeholder="placeholder.phone" required />
+          <input type="date" name="date" required />
+          <input type="number" name="persons" min="1" placeholder="Person" data-i18n-placeholder="placeholder.personsText" required />
+          <select name="package">
+            <option data-i18n="package.cabana">CABANA ONLY</option>
+            <option data-i18n="package.dayout">DAYOUT</option>
+            <option data-i18n="package.bb">BB</option>
+            <option data-i18n="package.hb">HB</option>
+            <option data-i18n="package.fb">FB</option>
           </select>
-          <textarea name="message" rows="4" placeholder="Dates, guests and special requests"></textarea>
-          <button type="submit">Send via WhatsApp</button>
+          <select name="airport">
+            <option data-i18n="option.no">No airport pickup</option>
+            <option data-i18n="option.yes">Airport pickup needed</option>
+            <option data-i18n="option.confirm">Need airport pickup details</option>
+          </select>
+          <textarea name="message" rows="4" placeholder="Special requests" data-i18n-placeholder="placeholder.message"></textarea>
+          <button type="submit" data-i18n="form.sendWhatsapp">Send via WhatsApp</button>
           <p class="form-status" aria-live="polite"></p>
         </form>
       </section>
     </main>
 
-    <a class="whatsapp-float" href="https://wa.me/94771234567?text=Hello%20Green%20Heaven%20Eco%20Resort%2C%20I%20would%20like%20to%20make%20a%20booking%20enquiry." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">☘</a>
+    <a class="whatsapp-float" href="https://wa.me/94771234567?text=Hello%20Green%20Heaven%20Eco%20Resort%2C%20I%20would%20like%20to%20make%20a%20booking%20enquiry." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WA</a>
 
     <footer class="site-footer">
-      <p>Book direct &amp; get the best price</p>
+      <p data-i18n="footer.bestPrice">Book direct and get the best price</p>
       <p><a href="https://wa.me/94771234567?text=Hello%20Green%20Heaven%20Eco%20Resort%2C%20I%20would%20like%20to%20make%20a%20booking%20enquiry." target="_blank" rel="noopener noreferrer">WhatsApp: +94 77 123 4567</a></p>
       <p>Email: info@greenheavenresort.lk</p>
-      <p><a href="https://www.google.com/maps/search/?api=1&amp;query=8.0455963,80.7393357" target="_blank" rel="noopener noreferrer">Open Google Maps</a></p>
+      <p><a href="https://www.google.com/maps/search/?api=1&amp;query=8.0455963,80.7393357" target="_blank" rel="noopener noreferrer" data-i18n="footer.maps">Open Google Maps</a></p>
     </footer>
 
     <script src="script.js"></script>
