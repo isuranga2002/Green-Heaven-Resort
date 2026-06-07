@@ -1706,6 +1706,7 @@ h2, h3 { color: var(--ink); }
 @media (max-width: 980px) {
   .room-card, .intro, .experience-band, .dining, .location, .contact { grid-template-columns: 1fr; }
   .room-card:nth-child(even) img { order: 0; }
+  .room-card img { min-height: 320px; height: 320px; }
   .detail-grid, .facility-grid, .service-grid, .nearby-card-grid, .nearby-grid, .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .package-panel { grid-column: 1 / -1; }
   .package-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1724,9 +1725,11 @@ h2, h3 { color: var(--ink); }
   .booking-bar, .detail-grid, .facility-grid, .service-grid, .nearby-card-grid, .nearby-grid, .policy-grid, .gallery-grid, .site-footer { grid-template-columns: 1fr; }
   .package-grid { grid-template-columns: 1fr; }
   .booking-bar label { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-  .room-card img { min-height: 310px; }
+  .room-card img { min-height: 260px; height: 260px; }
   .room-card > div { padding: 24px 18px; }
   .room-tags li { font-size: 0.62rem; }
+  .experience-band img, .dining img { min-height: 280px; height: 280px; }
+  .location iframe { min-height: 320px; height: 320px; }
   .intro, .rooms, .stay-details, .facilities-showcase, .experience-band, .services, .dining, .gallery, .location, .nearby, .policy-section, .contact { width: calc(100% - 24px); }
 }
 
@@ -1841,8 +1844,8 @@ h2, h3 { color: var(--ink); }
 }
 
 .nearby-card-grid img {
-  height: 265px;
-  aspect-ratio: 16 / 10;
+  height: 200px;
+  object-fit: cover;
 }
 
 .nearby-card-grid div {
