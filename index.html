@@ -9,7 +9,7 @@
       content="Green Heaven Eco Resort is a luxury nature cabana concept near Sigiriya with forest A-frame stays, warm hospitality, dining experiences, gallery, location and opening enquiries."
     />
     <meta name="theme-color" content="#08281f" />
-    <link rel="icon" href="pica/web/green-heaven-mark.svg" type="image/svg+xml" />
+    <link rel="icon" href="pica/web/brand/green-heaven-mark.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,9 +19,23 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <svg class="svg-sprite" aria-hidden="true" focusable="false">
+      <symbol id="icon-leaf" viewBox="0 0 24 24"><path d="M20 4C11 4 5 9.5 5 17.5"/><path d="M20 4c0 9-5.5 15-14.5 15"/><path d="M8 16c2.5-.5 4.8-1.7 6.8-3.7"/></symbol>
+      <symbol id="icon-bath" viewBox="0 0 24 24"><path d="M4 12h16v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-3Z"/><path d="M7 12V6a3 3 0 0 1 6 0"/><path d="M12 6h4"/><path d="M7 20l-1 2"/><path d="M17 20l1 2"/></symbol>
+      <symbol id="icon-dining" viewBox="0 0 24 24"><path d="M7 3v18"/><path d="M4 3v6a3 3 0 0 0 6 0V3"/><path d="M16 3v18"/><path d="M16 3c3 2 4 5 4 9h-4"/></symbol>
+      <symbol id="icon-parking" viewBox="0 0 24 24"><path d="M5 12a7 7 0 1 0 14 0 7 7 0 0 0-14 0Z"/><path d="M10 16V8h3a2.5 2.5 0 0 1 0 5h-3"/></symbol>
+      <symbol id="icon-car" viewBox="0 0 24 24"><path d="M5 17h14"/><path d="M6 17l1.5-6h9L18 17"/><path d="M8 17v2"/><path d="M16 17v2"/><path d="M8 11l1.5-4h5L16 11"/></symbol>
+      <symbol id="icon-bird" viewBox="0 0 24 24"><path d="M4 14c5-1 8-4 10-9 1.5 3.5 3.5 5.5 6 7"/><path d="M9 14c2.5 1.5 5.5 1.5 9 0"/><path d="M11 18c1.5 1 3.5 1 5 0"/></symbol>
+      <symbol id="icon-calendar" viewBox="0 0 24 24"><path d="M5 5h14v15H5z"/><path d="M8 3v4"/><path d="M16 3v4"/><path d="M5 10h14"/></symbol>
+      <symbol id="icon-bed" viewBox="0 0 24 24"><path d="M4 12V6"/><path d="M20 18v-4a2 2 0 0 0-2-2H4v6"/><path d="M4 15h16"/><path d="M7 10h4"/></symbol>
+      <symbol id="icon-users" viewBox="0 0 24 24"><path d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 11a2.5 2.5 0 0 0 0-5"/><path d="M17 15c2.5.5 4 2.2 4.5 5"/></symbol>
+      <symbol id="icon-phone" viewBox="0 0 24 24"><path d="M6 4l3 4-2 2c1.5 3 4 5.5 7 7l2-2 4 3c-.5 2-2 3-4 3C9 21 3 15 3 8c0-2 1-3.5 3-4Z"/></symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></symbol>
+      <symbol id="icon-map" viewBox="0 0 24 24"><path d="M4 6l5-2 6 2 5-2v14l-5 2-6-2-5 2V6Z"/><path d="M9 4v14"/><path d="M15 6v14"/></symbol>
+    </svg>
     <header class="site-header">
       <a class="brand" href="#home" aria-label="Green Heaven home">
-        <img src="pica/web/green-heaven-mark.svg" alt="" />
+        <img src="pica/web/brand/green-heaven-mark.svg" alt="" />
         <span>Green Heaven<small>Eco Resort</small></span>
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
@@ -50,7 +64,7 @@
 
     <main id="home">
       <section class="hero">
-        <img class="hero-bg" src="pica/web/concept-evening-deck.avif" alt="Green Heaven Eco Resort A-frame forest stay glowing at night with an outdoor sitting area" fetchpriority="high" />
+        <img class="hero-bg" src="pica/web/concept/concept-evening-deck.avif" alt="Green Heaven Eco Resort A-frame forest stay glowing at night with an outdoor sitting area" fetchpriority="high" />
         <div class="hero-overlay"></div>
         <div class="hero-content">
           <p class="kicker" data-i18n="hero.kicker">Welcome to Green Heaven Eco Resort</p>
@@ -70,21 +84,26 @@
             <input type="tel" name="phone" placeholder="+94 77 123 4567" required />
           </label>
           <label>
-            <span data-i18n="form.date">Date</span>
-            <input type="date" name="date" required />
+            <span data-i18n="form.checkin">Check-in Date</span>
+            <input type="date" name="checkin" required />
           </label>
           <label>
-            <span data-i18n="form.persons">Person</span>
+            <span data-i18n="form.checkout">Check-out Date</span>
+            <input type="date" name="checkout" required />
+          </label>
+          <label>
+            <span data-i18n="form.guests">Guests</span>
             <input type="number" name="persons" min="1" placeholder="2" data-i18n-placeholder="placeholder.persons" required />
           </label>
           <label>
             <span data-i18n="form.package">Package</span>
             <select name="package">
-              <option data-i18n="package.cabana">CABANA ONLY</option>
-              <option data-i18n="package.dayout">DAYOUT</option>
-              <option data-i18n="package.bb">BB</option>
-              <option data-i18n="package.hb">HB</option>
-              <option data-i18n="package.fb">FB</option>
+              <option value="CABANA ONLY" data-i18n="package.cabana">CABANA ONLY</option>
+              <option value="DAYOUT" data-i18n="package.dayout">DAYOUT</option>
+              <option value="BB" data-i18n="package.bb">BB</option>
+              <option value="HB" data-i18n="package.hb">HB</option>
+              <option value="FB" data-i18n="package.fb">FB</option>
+              <option value="SAFARI PACKAGE" data-i18n="package.safari">SAFARI PACKAGE</option>
             </select>
           </label>
           <label>
@@ -112,9 +131,9 @@
           <a class="outline-btn" href="#rooms" data-i18n="intro.cta">Discover More</a>
         </div>
         <div class="intro-icons">
-          <article><span>01</span><strong data-i18n="intro.nature">Nature</strong><p data-i18n="intro.natureCopy">Surrounded by lush greenery.</p></article>
-          <article><span>02</span><strong data-i18n="intro.luxury">Luxury</strong><p data-i18n="intro.luxuryCopy">Premium stays with comfort.</p></article>
-          <article><span>03</span><strong data-i18n="intro.hospitality">Hospitality</strong><p data-i18n="intro.hospitalityCopy">Warm service from the heart.</p></article>
+          <article><svg class="line-icon"><use href="#icon-leaf"></use></svg><strong data-i18n="intro.nature">Nature</strong><p data-i18n="intro.natureCopy">Surrounded by lush greenery.</p></article>
+          <article><svg class="line-icon"><use href="#icon-bed"></use></svg><strong data-i18n="intro.luxury">Luxury</strong><p data-i18n="intro.luxuryCopy">Premium stays with comfort.</p></article>
+          <article><svg class="line-icon"><use href="#icon-check"></use></svg><strong data-i18n="intro.hospitality">Hospitality</strong><p data-i18n="intro.hospitalityCopy">Warm service from the heart.</p></article>
         </div>
       </section>
 
@@ -125,7 +144,7 @@
         </div>
         <div class="room-grid">
           <article class="room-card">
-            <img src="pica/web/concept-cabin-bedroom.avif" alt="Luxury A-frame cabana bedroom concept" loading="lazy" />
+            <img src="pica/web/concept/concept-cabin-bedroom.avif" alt="Luxury A-frame cabana bedroom concept" loading="lazy" />
             <div>
               <span data-i18n="rooms.card1.tag">Best Seller</span>
               <h3 data-i18n="rooms.card1.title">Forest A-Frame Stay</h3>
@@ -135,11 +154,17 @@
                 <li data-i18n="stay.facilityBath">Attached bathroom</li>
                 <li data-i18n="stay.facilityDining">Outdoor dining arrangement</li>
               </ul>
+              <dl class="room-details">
+                <div><dt data-i18n="room.size">Room size</dt><dd data-i18n="room.sizeForest">Private A-frame unit</dd></div>
+                <div><dt data-i18n="room.bed">Bed type</dt><dd data-i18n="room.kingBed">King-size bed</dd></div>
+                <div><dt data-i18n="room.maxGuests">Max guests</dt><dd data-i18n="room.maxGuests4">Up to 4 guests</dd></div>
+                <div><dt data-i18n="room.amenities">Amenities</dt><dd data-i18n="room.amenitiesForest">WiFi, attached bathroom, outdoor sitting area</dd></div>
+              </dl>
               <a class="outline-btn gold" href="#packages" data-i18n="stay.packageAction">Request Package</a>
             </div>
           </article>
           <article class="room-card">
-            <img src="pica/web/concept-cabin-daylight.avif" alt="Private A-frame cabana exterior concept" loading="lazy" />
+            <img src="pica/web/concept/concept-cabin-daylight.avif" alt="Private A-frame cabana exterior concept" loading="lazy" />
             <div>
               <span data-i18n="rooms.card2.tag">Jungle View</span>
               <h3 data-i18n="rooms.card2.title">Canopy View Stay</h3>
@@ -149,11 +174,17 @@
                 <li data-i18n="stay.facilityParking">Parking support</li>
                 <li data-i18n="stay.facilityPickup">Airport pickup on request</li>
               </ul>
+              <dl class="room-details">
+                <div><dt data-i18n="room.size">Room size</dt><dd data-i18n="room.sizeCanopy">Private nature-view unit</dd></div>
+                <div><dt data-i18n="room.bed">Bed type</dt><dd data-i18n="room.doubleBed">Double bed setup</dd></div>
+                <div><dt data-i18n="room.maxGuests">Max guests</dt><dd data-i18n="room.maxGuests3">Up to 3 guests</dd></div>
+                <div><dt data-i18n="room.amenities">Amenities</dt><dd data-i18n="room.amenitiesCanopy">WiFi, parking support, airport pickup on request</dd></div>
+              </dl>
               <a class="outline-btn gold" href="#packages" data-i18n="stay.packageAction">Request Package</a>
             </div>
           </article>
           <article class="room-card">
-            <img src="pica/web/concept-evening-deck.avif" alt="Evening forest stay concept with warm outdoor lighting" loading="lazy" />
+            <img src="pica/web/concept/concept-evening-deck.avif" alt="Evening forest stay concept with warm outdoor lighting" loading="lazy" />
             <div>
               <span data-i18n="rooms.card3.tag">Luxury Escape</span>
               <h3 data-i18n="rooms.card3.title">Evening Glow Retreat</h3>
@@ -163,6 +194,12 @@
                 <li data-i18n="services.birds">Bird Watching Tours</li>
                 <li data-i18n="services.sunrise">Sunrise and Sunset Nature Experiences</li>
               </ul>
+              <dl class="room-details">
+                <div><dt data-i18n="room.size">Room size</dt><dd data-i18n="room.sizeEvening">Private evening deck stay</dd></div>
+                <div><dt data-i18n="room.bed">Bed type</dt><dd data-i18n="room.kingBed">King-size bed</dd></div>
+                <div><dt data-i18n="room.maxGuests">Max guests</dt><dd data-i18n="room.maxGuests4">Up to 4 guests</dd></div>
+                <div><dt data-i18n="room.amenities">Amenities</dt><dd data-i18n="room.amenitiesEvening">Photo gallery, dining setup, nature experiences</dd></div>
+              </dl>
               <a class="outline-btn gold" href="#packages" data-i18n="stay.packageAction">Request Package</a>
             </div>
           </article>
@@ -176,7 +213,6 @@
         </div>
         <div class="detail-grid">
           <article class="detail-panel package-panel">
-            <span>01</span>
             <h3 data-i18n="stay.packagesTitle">Packages</h3>
             <p data-i18n="stay.packagesCopy">Choose the stay plan that matches your trip. Final rates and availability are confirmed directly through WhatsApp.</p>
             <div class="package-grid">
@@ -185,70 +221,44 @@
                 <strong data-i18n="stay.packageRate">Confirm rate via WhatsApp</strong>
                 <p data-i18n="stay.packageCabana">Private forest stay only.</p>
                 <small data-i18n="stay.packageCabanaIncludes">Nature stay, private room and basic facilities</small>
-                <a href="#booking" data-i18n="stay.packageAction">Request Package</a>
+                <a href="#booking" data-package="CABANA ONLY" data-i18n="stay.packageAction">Request Package</a>
               </article>
               <article>
                 <b data-i18n="package.dayout">DAYOUT</b>
                 <strong data-i18n="stay.packageRate">Confirm rate via WhatsApp</strong>
                 <p data-i18n="stay.packageDayout">Day visit with nature time and arranged meals.</p>
                 <small data-i18n="stay.packageDayoutIncludes">Day access, outdoor dining and nature time</small>
-                <a href="#booking" data-i18n="stay.packageAction">Request Package</a>
+                <a href="#booking" data-package="DAYOUT" data-i18n="stay.packageAction">Request Package</a>
               </article>
               <article>
                 <b data-i18n="package.bb">BB</b>
                 <strong data-i18n="stay.packageRate">Confirm rate via WhatsApp</strong>
                 <p data-i18n="stay.packageBb">Stay with breakfast included.</p>
                 <small data-i18n="stay.packageBbIncludes">Overnight stay with breakfast</small>
-                <a href="#booking" data-i18n="stay.packageAction">Request Package</a>
+                <a href="#booking" data-package="BB" data-i18n="stay.packageAction">Request Package</a>
               </article>
               <article>
                 <b data-i18n="package.hb">HB</b>
                 <strong data-i18n="stay.packageRate">Confirm rate via WhatsApp</strong>
                 <p data-i18n="stay.packageHb">Stay with breakfast and dinner.</p>
                 <small data-i18n="stay.packageHbIncludes">Overnight stay with breakfast and dinner</small>
-                <a href="#booking" data-i18n="stay.packageAction">Request Package</a>
+                <a href="#booking" data-package="HB" data-i18n="stay.packageAction">Request Package</a>
               </article>
               <article>
                 <b data-i18n="package.fb">FB</b>
                 <strong data-i18n="stay.packageRate">Confirm rate via WhatsApp</strong>
                 <p data-i18n="stay.packageFb">Stay with breakfast, lunch and dinner.</p>
                 <small data-i18n="stay.packageFbIncludes">Overnight stay with all main meals</small>
-                <a href="#booking" data-i18n="stay.packageAction">Request Package</a>
+                <a href="#booking" data-package="FB" data-i18n="stay.packageAction">Request Package</a>
+              </article>
+              <article>
+                <b data-i18n="package.safari">SAFARI PACKAGE</b>
+                <strong data-i18n="stay.packageFrom">From $XX per night</strong>
+                <p data-i18n="stay.packageSafari">Stay plan with arranged safari experience.</p>
+                <small data-i18n="stay.packageSafariIncludes">Room stay, safari support and trip planning</small>
+                <a href="#booking" data-package="SAFARI PACKAGE" data-i18n="stay.packageAction">Request Package</a>
               </article>
             </div>
-          </article>
-          <article class="detail-panel">
-            <span>02</span>
-            <h3 data-i18n="stay.nearbyTitle">Nearby Places</h3>
-            <ul>
-              <li><strong>Habarana Lake</strong><p>1.19 km</p></li>
-              <li><strong>Sigiriya Temple</strong><p>9.67 km</p></li>
-              <li><strong>Pidurangala Rock</strong><p>9.3 km</p></li>
-              <li><strong>Minneriya National Park</strong><p>12.12 km</p></li>
-              <li><strong>Dambulla Cave Temple</strong><p>23.31 km</p></li>
-            </ul>
-          </article>
-          <article class="detail-panel">
-            <span>03</span>
-            <h3 data-i18n="stay.facilitiesTitle">Facilities</h3>
-            <ul>
-              <li data-i18n="stay.facilityStay">Private nature stay</li>
-              <li data-i18n="stay.facilityBath">Attached bathroom</li>
-              <li data-i18n="stay.facilityDining">Outdoor dining arrangement</li>
-              <li data-i18n="stay.facilityParking">Parking support</li>
-              <li data-i18n="stay.facilityPickup">Airport pickup on request</li>
-            </ul>
-          </article>
-          <article class="detail-panel">
-            <span>04</span>
-            <h3 data-i18n="stay.policiesTitle">Policies</h3>
-            <ul>
-              <li data-i18n="stay.policyReserve">Advance reservation is required.</li>
-              <li data-i18n="stay.policyConfirm">Package price and availability are confirmed by WhatsApp.</li>
-              <li data-i18n="stay.policyNature">Please respect the natural surroundings.</li>
-              <li data-i18n="stay.policyFood">Meal requests should be shared before arrival.</li>
-              <li data-i18n="stay.policyPickup">Airport pickup must be requested in advance.</li>
-            </ul>
           </article>
         </div>
       </section>
@@ -256,16 +266,16 @@
       <section class="facilities-showcase" id="facilities">
         <div class="section-title">
           <p class="kicker dark" data-i18n="stay.facilitiesTitle">Facilities</p>
-          <h2 data-i18n="dining.title">Fresh tastes in nature.</h2>
+          <h2 data-i18n="facilities.title">Everything you need for a comfortable stay.</h2>
         </div>
-        <img class="wide-photo" src="pica/web/concept-evening-deck.avif" alt="Warm forest cabana lights at Green Heaven Eco Resort" loading="lazy" />
+        <img class="wide-photo" src="pica/web/concept/concept-evening-deck.avif" alt="Warm forest cabana lights at Green Heaven Eco Resort" loading="lazy" />
         <div class="facility-grid">
-          <article><span>01</span><h3 data-i18n="stay.facilityStay">Private nature stay</h3><p data-i18n="intro.natureCopy">Surrounded by lush greenery.</p></article>
-          <article><span>02</span><h3 data-i18n="stay.facilityBath">Attached bathroom</h3><p data-i18n="intro.luxuryCopy">Premium stays with comfort.</p></article>
-          <article><span>03</span><h3 data-i18n="stay.facilityDining">Outdoor dining arrangement</h3><p data-i18n="dining.copy">Breakfast and dining concepts are inspired by Sri Lankan flavours, tropical fruit, warm tea and relaxed service in nature.</p></article>
-          <article><span>04</span><h3 data-i18n="stay.facilityParking">Parking support</h3><p data-i18n="stay.policyReserve">Advance reservation is required.</p></article>
-          <article><span>05</span><h3 data-i18n="stay.facilityPickup">Airport pickup on request</h3><p data-i18n="stay.policyPickup">Airport pickup must be requested in advance.</p></article>
-          <article><span>06</span><h3 data-i18n="services.birds">Bird Watching Tours</h3><p data-i18n="services.sunrise">Sunrise and Sunset Nature Experiences</p></article>
+          <article><svg class="line-icon"><use href="#icon-leaf"></use></svg><h3 data-i18n="stay.facilityStay">Private nature stay</h3><p data-i18n="intro.natureCopy">Surrounded by lush greenery.</p></article>
+          <article><svg class="line-icon"><use href="#icon-bath"></use></svg><h3 data-i18n="stay.facilityBath">Attached bathroom</h3><p data-i18n="intro.luxuryCopy">Premium stays with comfort.</p></article>
+          <article><svg class="line-icon"><use href="#icon-dining"></use></svg><h3 data-i18n="stay.facilityDining">Outdoor dining arrangement</h3><p data-i18n="dining.copy">Breakfast and dining concepts are inspired by Sri Lankan flavours, tropical fruit, warm tea and relaxed service in nature.</p></article>
+          <article><svg class="line-icon"><use href="#icon-parking"></use></svg><h3 data-i18n="stay.facilityParking">Parking support</h3><p data-i18n="facility.parkingCopy">On-site parking space available for guests with private vehicles.</p></article>
+          <article><svg class="line-icon"><use href="#icon-car"></use></svg><h3 data-i18n="stay.facilityPickup">Airport pickup on request</h3><p data-i18n="stay.policyPickup">Airport pickup must be requested in advance.</p></article>
+          <article><svg class="line-icon"><use href="#icon-bird"></use></svg><h3 data-i18n="services.birds">Bird Watching Tours</h3><p data-i18n="services.birdsCopy">Spot exotic birds and wildlife around the resort's natural forest surroundings.</p></article>
         </div>
       </section>
 
@@ -275,7 +285,7 @@
           <h2 data-i18n="experience.title">Slow mornings, forest days and glowing nights.</h2>
           <p data-i18n="experience.copy">Enjoy the rhythm of Green Heaven: quiet nature walks, private outdoor moments, local discovery and peaceful evenings in warm timber stays.</p>
         </article>
-        <img src="pica/web/concept-cabin-lounge.avif" alt="Forest-facing cabana lounge concept" loading="lazy" />
+        <img src="pica/web/concept/concept-cabin-lounge.avif" alt="Forest-facing cabana lounge concept" loading="lazy" />
       </section>
 
       <section class="services" id="activities">
@@ -285,63 +295,63 @@
         </div>
         <div class="service-grid" aria-label="Experiences we arrange">
           <article class="service-card">
-            <img src="pica/web/service-jeep-safari.jpg" alt="Jeep safari at Minneriya National Park with elephants" loading="lazy" />
+            <img src="pica/web/services/service-jeep-safari.webp" alt="Jeep safari at Minneriya National Park with elephants" loading="lazy" />
             <div class="service-card-body">
               <span class="service-num">01</span>
               <h3 data-i18n="services.safari">Minneriya / Kaudulla Jeep Safari</h3>
             </div>
           </article>
           <article class="service-card">
-            <img src="pica/web/service-village-tour.jpg" alt="Traditional village tour in Sri Lanka" loading="lazy" />
+            <img src="pica/web/services/service-village-tour.webp" alt="Traditional village tour in Sri Lanka" loading="lazy" />
             <div class="service-card-body">
               <span class="service-num">02</span>
               <h3 data-i18n="services.village">Traditional Village Tours</h3>
             </div>
           </article>
           <article class="service-card">
-            <img src="pica/web/service-boat-ride.jpg" alt="Scenic boat ride on a calm lake in Sri Lanka" loading="lazy" />
+            <img src="pica/web/services/service-boat-ride.webp" alt="Scenic boat ride on a calm lake in Sri Lanka" loading="lazy" />
             <div class="service-card-body">
               <span class="service-num">03</span>
               <h3 data-i18n="services.boat">Scenic Boat Ride Experience</h3>
             </div>
           </article>
           <article class="service-card">
-            <img src="pica/web/service-bbq-night.jpg" alt="Outdoor BBQ grill night experience in a forest setting" loading="lazy" />
+            <img src="pica/web/services/service-bbq-night.webp" alt="Outdoor BBQ grill night experience in a forest setting" loading="lazy" />
             <div class="service-card-body">
               <span class="service-num">04</span>
               <h3 data-i18n="services.bbq">BBQ Night Experience</h3>
             </div>
           </article>
           <article class="service-card">
-            <img src="pica/web/service-romantic-dinner.jpg" alt="Romantic outdoor dinner setup with candles" loading="lazy" />
+            <img src="pica/web/services/service-romantic-dinner.webp" alt="Romantic outdoor dinner setup with candles" loading="lazy" />
             <div class="service-card-body">
               <span class="service-num">05</span>
               <h3 data-i18n="services.romantic">Romantic Dinner Setup</h3>
             </div>
           </article>
           <article class="service-card">
-            <img src="pica/web/service-bird-watching.jpg" alt="Bird watching tour - Malabar pied hornbill in Sri Lanka" loading="lazy" />
+            <img src="pica/web/services/service-bird-watching.webp" alt="Bird watching tour - Malabar pied hornbill in Sri Lanka" loading="lazy" />
             <div class="service-card-body">
               <span class="service-num">06</span>
               <h3 data-i18n="services.birds">Bird Watching Tours</h3>
             </div>
           </article>
           <article class="service-card">
-            <img src="pica/web/service-bicycle-tour.jpg" alt="Bicycle tour through nature in Sri Lanka" loading="lazy" />
+            <img src="pica/web/services/service-bicycle-tour.webp" alt="Bicycle tour through nature in Sri Lanka" loading="lazy" />
             <div class="service-card-body">
               <span class="service-num">07</span>
               <h3 data-i18n="services.bicycle">Bicycle Tours Around Nature</h3>
             </div>
           </article>
           <article class="service-card">
-            <img src="pica/web/service-sunrise-sunset.jpg" alt="Sunrise at Sigiriya Rock Sri Lanka golden light" loading="lazy" />
+            <img src="pica/web/services/service-sunrise-sunset.webp" alt="Sunrise at Sigiriya Rock Sri Lanka golden light" loading="lazy" />
             <div class="service-card-body">
               <span class="service-num">08</span>
               <h3 data-i18n="services.sunrise">Sunrise &amp; Sunset Nature Experiences</h3>
             </div>
           </article>
           <article class="service-card">
-            <img src="pica/web/service-cooking-class.jpg" alt="Traditional Sri Lankan cooking class with local food" loading="lazy" />
+            <img src="pica/web/services/service-cooking-class.webp" alt="Traditional Sri Lankan cooking class with local food" loading="lazy" />
             <div class="service-card-body">
               <span class="service-num">09</span>
               <h3 data-i18n="services.cooking">Traditional Cooking Class</h3>
@@ -351,7 +361,7 @@
       </section>
 
       <section class="dining" id="dining">
-        <img src="pica/web/concept-deck-breakfast.avif" alt="Breakfast served in a private forest outdoor dining area" loading="lazy" />
+        <img src="pica/web/concept/concept-deck-breakfast.avif" alt="Breakfast served in a private forest outdoor dining area" loading="lazy" />
         <div>
           <p class="kicker dark" data-i18n="dining.kicker">Dining</p>
           <h2 data-i18n="dining.title">Fresh tastes in nature.</h2>
@@ -365,10 +375,10 @@
           <h2 data-i18n="gallery.title">Concept visuals inspired by the real cabana.</h2>
         </div>
         <div class="gallery-grid">
-          <img src="pica/web/concept-cabin-daylight.avif" alt="Daylight cabana concept" loading="lazy" />
-          <img src="pica/web/concept-cabin-bedroom.avif" alt="Bedroom concept" loading="lazy" />
-          <img src="pica/web/concept-deck-breakfast.avif" alt="Outdoor forest dining concept" loading="lazy" />
-          <img src="pica/web/concept-cabin-bathroom.avif" alt="Cabana bathroom concept" loading="lazy" />
+          <img src="pica/web/concept/concept-cabin-daylight.avif" alt="Daylight cabana concept" loading="lazy" />
+          <img src="pica/web/concept/concept-cabin-bedroom.avif" alt="Bedroom concept" loading="lazy" />
+          <img src="pica/web/concept/concept-deck-breakfast.avif" alt="Outdoor forest dining concept" loading="lazy" />
+          <img src="pica/web/concept/concept-cabin-bathroom.avif" alt="Cabana bathroom concept" loading="lazy" />
         </div>
       </section>
 
@@ -390,21 +400,34 @@
 
       <section class="nearby" id="nearby">
         <div class="section-title">
-          <p class="kicker dark" data-i18n="nearby.kicker">What's nearby</p>
-          <h2 data-i18n="nearby.title">Landmarks around Green Heaven.</h2>
+          <p class="kicker dark" data-i18n="nearby.kicker">Explore the Region</p>
+          <h2 data-i18n="nearby.title">Places to Visit Nearby</h2>
+          <p data-i18n="nearby.intro">Green Heaven is placed close to Habarana nature, Sigiriya heritage and some of the best wildlife experiences in the cultural triangle.</p>
         </div>
         <div class="nearby-card-grid">
           <article>
-            <img src="pica/web/nearby-pidurangala-rock.jpg" alt="Pidurangala Rock viewpoint overlooking the Sigiriya landscape, Sri Lanka" loading="lazy" />
+            <img src="pica/web/nearby/nearby-pidurangala-rock.webp" alt="Pidurangala Rock viewpoint overlooking the Sigiriya landscape, Sri Lanka" />
             <div><h3 data-i18n="nearby.card1.title">Pidurangala Rock - 9.3 km</h3><p data-i18n="nearby.card1.copy">A famous rock viewpoint with sunrise scenery and wide views across the Sigiriya landscape.</p></div>
           </article>
           <article>
-            <img src="pica/web/nearby-sigiriya-temple.jpg" alt="Sigiriya Lion Rock fortress rising above the jungle, Sri Lanka" loading="lazy" />
+            <img src="pica/web/nearby/nearby-sigiriya-temple.webp" alt="Sigiriya Lion Rock fortress rising above the jungle, Sri Lanka" />
             <div><h3 data-i18n="nearby.card2.title">Sigiriya Temple - 9.67 km</h3><p data-i18n="nearby.card2.copy">A cultural stop close to the resort area, ideal for guests exploring Sigiriya and its surroundings.</p></div>
           </article>
           <article>
-            <img src="pica/web/nearby-minneriya-park.jpg" alt="Elephant herd gathering at Minneriya National Park, Sri Lanka" loading="lazy" />
+            <img src="pica/web/nearby/nearby-minneriya-park.webp" alt="Elephant herd gathering at Minneriya National Park, Sri Lanka" />
             <div><h3 data-i18n="nearby.card3.title">Minneriya National Park - 12.12 km</h3><p data-i18n="nearby.card3.copy">A popular wildlife destination known for jeep safaris, elephants and dry-zone nature experiences.</p></div>
+          </article>
+          <article>
+            <img src="pica/web/nearby/nearby-habarana-lake.webp" alt="Habarana Lake surrounded by greenery in Sri Lanka" />
+            <div><h3 data-i18n="nearby.card4.title">Habarana Lake - 1.19 km</h3><p data-i18n="nearby.card4.copy">A peaceful local lake area for soft nature views, relaxed walks and quiet moments close to the resort.</p></div>
+          </article>
+          <article>
+            <img src="pica/web/nearby/nearby-kaudulla-park.webp" alt="Kaudulla National Park landscape and wildlife in Sri Lanka" />
+            <div><h3 data-i18n="nearby.card5.title">Kaudulla National Park - 22 km</h3><p data-i18n="nearby.card5.copy">A dry-zone wildlife reserve often paired with Minneriya for elephant watching and guided safari drives.</p></div>
+          </article>
+          <article>
+            <img src="pica/web/nearby/nearby-dambulla-cave-temple.webp" alt="Dambulla Cave Temple interior with historic Buddhist art in Sri Lanka" />
+            <div><h3 data-i18n="nearby.card6.title">Dambulla Cave Temple - 23.31 km</h3><p data-i18n="nearby.card6.copy">A UNESCO-recognised cave temple complex with ancient Buddhist art, statues and a strong cultural atmosphere.</p></div>
           </article>
         </div>
         <div class="nearby-grid">
@@ -446,10 +469,37 @@
           <h2 data-i18n="stay.policiesTitle">Policies</h2>
         </div>
         <div class="policy-grid">
-          <article><span>01</span><h3 data-i18n="policy.reservation">Reservation</h3><p data-i18n="stay.policyReserve">Advance reservation is required.</p><p data-i18n="stay.policyConfirm">Package price and availability are confirmed by WhatsApp.</p></article>
-          <article><span>02</span><h3 data-i18n="dining.kicker">Dining</h3><p data-i18n="stay.policyFood">Meal requests should be shared before arrival.</p><p data-i18n="dining.copy">Breakfast and dining concepts are inspired by Sri Lankan flavours, tropical fruit, warm tea and relaxed service in nature.</p></article>
-          <article><span>03</span><h3 data-i18n="intro.nature">Nature</h3><p data-i18n="stay.policyNature">Please respect the natural surroundings.</p></article>
-          <article><span>04</span><h3 data-i18n="form.airport">Airport pickup</h3><p data-i18n="stay.policyPickup">Airport pickup must be requested in advance.</p></article>
+          <article><svg class="line-icon"><use href="#icon-calendar"></use></svg><h3 data-i18n="policy.checkin">Check-In / Check-Out</h3><p data-i18n="policy.checkinTime">Check-in: 2:00 PM</p><p data-i18n="policy.checkoutTime">Check-out: 12:00 PM</p></article>
+          <article><svg class="line-icon"><use href="#icon-check"></use></svg><h3 data-i18n="policy.reservation">Reservation</h3><p data-i18n="stay.policyReserve">Advance reservation is required.</p><p data-i18n="stay.policyConfirm">Package price and availability are confirmed by WhatsApp.</p></article>
+          <article><svg class="line-icon"><use href="#icon-dining"></use></svg><h3 data-i18n="dining.kicker">Dining</h3><p data-i18n="stay.policyFood">Meal requests should be shared before arrival.</p><p data-i18n="dining.copy">Breakfast and dining concepts are inspired by Sri Lankan flavours, tropical fruit, warm tea and relaxed service in nature.</p></article>
+          <article><svg class="line-icon"><use href="#icon-leaf"></use></svg><h3 data-i18n="intro.nature">Nature</h3><p data-i18n="stay.policyNature">Please respect the natural surroundings.</p></article>
+        </div>
+      </section>
+
+      <section class="feedback-section" id="feedback">
+        <div class="section-title">
+          <p class="kicker dark" data-i18n="feedback.kicker">Guest Feedback</p>
+          <h2 data-i18n="feedback.title">Warm words from our guests.</h2>
+        </div>
+        <div class="feedback-grid">
+          <article><svg class="line-icon"><use href="#icon-check"></use></svg><p data-i18n="feedback.card1">Excellent hospitality and a peaceful natural setting.</p></article>
+          <article><svg class="line-icon"><use href="#icon-leaf"></use></svg><p data-i18n="feedback.card2">A calm stay with beautiful greenery and friendly service.</p></article>
+          <article><svg class="line-icon"><use href="#icon-bed"></use></svg><p data-i18n="feedback.card3">Comfortable rooms, easy booking and helpful local arrangements.</p></article>
+        </div>
+      </section>
+
+      <section class="why-section" id="why-us">
+        <div class="section-title">
+          <p class="kicker dark" data-i18n="why.kicker">Why Choose Us</p>
+          <h2 data-i18n="why.title">Simple comforts for nature-focused stays.</h2>
+        </div>
+        <div class="why-grid">
+          <article><svg class="line-icon"><use href="#icon-leaf"></use></svg><h3 data-i18n="why.eco">Eco Friendly</h3></article>
+          <article><svg class="line-icon"><use href="#icon-check"></use></svg><h3 data-i18n="why.wifi">Free WiFi</h3></article>
+          <article><svg class="line-icon"><use href="#icon-map"></use></svg><h3 data-i18n="why.view">Nature View</h3></article>
+          <article><svg class="line-icon"><use href="#icon-dining"></use></svg><h3 data-i18n="why.restaurant">Restaurant</h3></article>
+          <article><svg class="line-icon"><use href="#icon-car"></use></svg><h3 data-i18n="why.safari">Safari Tours</h3></article>
+          <article><svg class="line-icon"><use href="#icon-parking"></use></svg><h3 data-i18n="why.parking">Free Parking</h3></article>
         </div>
       </section>
 
@@ -462,14 +512,16 @@
         <form class="contact-form">
           <input type="text" name="name" placeholder="Full name" data-i18n-placeholder="placeholder.name" required />
           <input type="tel" name="phone" placeholder="WhatsApp number" data-i18n-placeholder="placeholder.phone" required />
-          <input type="date" name="date" required />
-          <input type="number" name="persons" min="1" placeholder="Person" data-i18n-placeholder="placeholder.personsText" required />
+          <input type="date" name="checkin" aria-label="Check-in Date" required />
+          <input type="date" name="checkout" aria-label="Check-out Date" required />
+          <input type="number" name="persons" min="1" placeholder="Guests" data-i18n-placeholder="placeholder.personsText" required />
           <select name="package">
-            <option data-i18n="package.cabana">CABANA ONLY</option>
-            <option data-i18n="package.dayout">DAYOUT</option>
-            <option data-i18n="package.bb">BB</option>
-            <option data-i18n="package.hb">HB</option>
-            <option data-i18n="package.fb">FB</option>
+            <option value="CABANA ONLY" data-i18n="package.cabana">CABANA ONLY</option>
+            <option value="DAYOUT" data-i18n="package.dayout">DAYOUT</option>
+            <option value="BB" data-i18n="package.bb">BB</option>
+            <option value="HB" data-i18n="package.hb">HB</option>
+            <option value="FB" data-i18n="package.fb">FB</option>
+            <option value="SAFARI PACKAGE" data-i18n="package.safari">SAFARI PACKAGE</option>
           </select>
           <select name="airport">
             <option data-i18n="option.no">No airport pickup</option>
@@ -483,7 +535,14 @@
       </section>
     </main>
 
-    <a class="whatsapp-float" href="https://wa.me/94771234567?text=Hello%20Green%20Heaven%20Eco%20Resort%2C%20I%20would%20like%20to%20make%20a%20booking%20enquiry." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">WA</a>
+    <div class="floating-actions" aria-label="Quick contact actions">
+      <a class="whatsapp-float" href="https://wa.me/94771234567?text=Hello%20Green%20Heaven%20Eco%20Resort%2C%20I%20would%20like%20to%20make%20a%20booking%20enquiry." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="26" height="26" fill="white" aria-hidden="true">
+          <path d="M24 4C13 4 4 13 4 24c0 3.7 1 7.2 2.8 10.2L4 44l10.1-2.7C17.1 43.1 20.5 44 24 44c11 0 20-9 20-20S35 4 24 4zm0 36c-3.1 0-6.1-.8-8.7-2.4l-.6-.4-6 1.6 1.6-5.8-.4-.6C8.8 30.2 8 27.1 8 24c0-8.8 7.2-16 16-16s16 7.2 16 16-7.2 16-16 16zm8.7-11.8c-.5-.2-2.8-1.4-3.2-1.5-.4-.2-.7-.2-1 .2-.3.4-1.2 1.5-1.5 1.9-.3.3-.5.4-1 .1-.5-.2-2-.7-3.8-2.3-1.4-1.2-2.3-2.8-2.6-3.2-.3-.5 0-.7.2-1 .2-.2.5-.5.7-.8.2-.3.2-.5.4-.8.1-.3 0-.6-.1-.8-.1-.2-1-2.5-1.4-3.4-.4-.9-.8-.8-1-.8h-.9c-.3 0-.7.1-1.1.5-.4.4-1.5 1.5-1.5 3.6s1.5 4.1 1.7 4.4c.2.3 3 4.5 7.2 6.3 1 .4 1.8.7 2.4.9.9.3 1.7.2 2.4.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.4-.3-.9-.5z"/>
+        </svg>
+      </a>
+      <a class="call-float" href="tel:+94771234567" aria-label="Call Green Heaven Eco Resort"><svg class="line-icon"><use href="#icon-phone"></use></svg></a>
+    </div>
 
     <footer class="site-footer">
       <p data-i18n="footer.bestPrice">Book direct and get the best price</p>
