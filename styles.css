@@ -1682,6 +1682,75 @@ h2, h3 { color: var(--ink); }
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* Footer Social Media Links */
+.footer-social {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.social-link svg {
+  width: 20px;
+  height: 20px;
+}
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+.social-facebook:hover {
+  background: #1877F2;
+}
+.social-instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+.social-whatsapp:hover {
+  background: #25D366;
+}
+.social-tiktok:hover {
+  background: #010101;
+  color: #25F4EE;
+  box-shadow: 0 6px 20px rgba(37, 244, 238, 0.25);
+}
+
+.footer-credit {
+  grid-column: 1 / -1;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.38);
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.footer-credit a {
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-credit a:hover {
+  color: #fff;
+}
+
+
 /* Media Queries */
 @media (max-width: 1180px) {
   .site-header { grid-template-columns: auto auto 1fr auto; padding: 10px 16px; }
@@ -1731,6 +1800,10 @@ h2, h3 { color: var(--ink); }
   .experience-band img, .dining img { min-height: 280px; height: 280px; }
   .location iframe { min-height: 320px; height: 320px; }
   .intro, .rooms, .stay-details, .facilities-showcase, .experience-band, .services, .dining, .gallery, .location, .nearby, .policy-section, .contact { width: calc(100% - 24px); }
+  .footer-social { gap: 14px; margin-top: 16px; padding-top: 14px; }
+  .social-link { width: 38px; height: 38px; }
+  .social-link svg { width: 18px; height: 18px; }
+  .footer-credit { font-size: 0.65rem; margin-top: 10px; padding-top: 10px; }
 }
 
 /* Final polish for requested sections and mobile readability. */
