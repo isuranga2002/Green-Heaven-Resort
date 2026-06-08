@@ -1,0 +1,10 @@
+# Green Heaven Eco Resort - Robots.txt
+User-agent: *
+Allow: /
+Disallow: /.git/
+
+# Sitemap
+Sitemap: https://greenheavenecoresort.com/sitemap.xml
+
+# Crawl-delay (optional, polite crawling)
+Crawl-delay: 1
