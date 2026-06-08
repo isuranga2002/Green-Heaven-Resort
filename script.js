@@ -5,7 +5,7 @@ const form = document.querySelector(".contact-form");
 const bookingForm = document.querySelector(".booking-bar");
 const status = document.querySelector(".form-status");
 const languageSelect = document.querySelector("#language-select");
-const whatsappNumber = "94771234567";
+const whatsappNumber = "94755240716";
 
 const translations = {
   en: {
