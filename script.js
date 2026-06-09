@@ -1035,3 +1035,17 @@ document.querySelectorAll('a[href="#booking"][data-package]').forEach((link) => 
     }
   });
 });
+
+// Open date picker when clicking anywhere on a date input field
+document.querySelectorAll('input[type="date"]').forEach((input) => {
+  input.addEventListener("click", () => {
+    try {
+      if (typeof input.showPicker === "function") {
+        input.showPicker();
+      }
+    } catch (error) {
+      console.warn("Date picker showPicker() not supported or blocked:", error);
+    }
+  });
+});
+
