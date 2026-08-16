@@ -37,8 +37,11 @@
     <meta name="twitter:image" content="https://greenheavenecoresort.com/pica/web/concept/concept-evening-deck.avif" />
 
     <!-- Favicon -->
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="icon" href="pica/web/brand/favicon-192.png" type="image/png" sizes="192x192" />
+    <link rel="icon" href="pica/web/brand/favicon-512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="pica/web/brand/favicon-512.png" />
     <link rel="icon" href="pica/web/brand/green-heaven-mark.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="pica/web/brand/green-heaven-mark.svg" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -113,8 +116,7 @@
     </svg>
     <header class="site-header">
       <a class="brand" href="#home" aria-label="Green Heaven home">
-        <img src="pica/web/brand/green-heaven-mark.svg" alt="" />
-        <span>Green Heaven<small>Eco Resort</small></span>
+        <img src="pica/web/brand/green-heaven-logo.png" alt="Green Heaven Eco Resort" class="brand-logo-full" />
       </a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">
         <span></span>
@@ -137,8 +139,29 @@
           <option value="zh">Chinese</option>
         </select>
       </label>
-      <a class="book-button" href="#booking" data-i18n="nav.book">Book Now</a>
+      <button class="book-button" id="booking-modal-trigger" type="button" data-i18n="nav.book">Book Now</button>
     </header>
+
+    <!-- Booking Choice Modal -->
+    <div class="booking-modal-overlay" id="booking-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title" hidden>
+      <div class="booking-modal">
+        <button class="booking-modal-close" id="booking-modal-close" aria-label="Close booking options">&times;</button>
+        <p class="kicker" id="booking-modal-title">Reserve Your Stay</p>
+        <h2>How would you like to book?</h2>
+        <p>Choose your preferred booking method below.</p>
+        <div class="booking-modal-actions">
+          <button class="booking-modal-wa" id="booking-modal-whatsapp" type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M24 4C13 4 4 13 4 24c0 3.7 1 7.2 2.8 10.2L4 44l10.1-2.7C17.1 43.1 20.5 44 24 44c11 0 20-9 20-20S35 4 24 4zm0 36c-3.1 0-6.1-.8-8.7-2.4l-.6-.4-6 1.6 1.6-5.8-.4-.6C8.8 30.2 8 27.1 8 24c0-8.8 7.2-16 16-16s16 7.2 16 16-7.2 16-16 16zm8.7-11.8c-.5-.2-2.8-1.4-3.2-1.5-.4-.2-.7-.2-1 .2-.3.4-1.2 1.5-1.5 1.9-.3.3-.5.4-1 .1-.5-.2-2-.7-3.8-2.3-1.4-1.2-2.3-2.8-2.6-3.2-.3-.5 0-.7.2-1 .2-.2.5-.5.7-.8.2-.3.2-.5.4-.8.1-.3 0-.6-.1-.8-.1-.2-1-2.5-1.4-3.4-.4-.9-.8-.8-1-.8h-.9c-.3 0-.7.1-1.1.5-.4.4-1.5 1.5-1.5 3.6s1.5 4.1 1.7 4.4c.2.3 3 4.5 7.2 6.3 1 .4 1.8.7 2.4.9.9.3 1.7.2 2.4.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.4-.3-.9-.5z"/></svg>
+            Book via WhatsApp
+          </button>
+          <a class="booking-modal-direct" href="https://greenheavenecoresort.com/booking/" target="_blank" rel="noopener noreferrer" id="booking-modal-direct">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5h14v15H5z"/><path d="M8 3v4"/><path d="M16 3v4"/><path d="M5 10h14"/></svg>
+            Direct Online Booking
+          </a>
+        </div>
+        <p class="booking-modal-note">WhatsApp for personalised assistance &bull; Online for instant confirmation</p>
+      </div>
+    </div>
 
     <main id="home">
       <section class="hero">
@@ -222,7 +245,7 @@
         </div>
         <div class="room-grid">
           <article class="room-card">
-            <img src="pica/web/concept/concept-cabin-bedroom.avif" alt="Luxury A-frame cabana bedroom concept" loading="lazy" />
+            <img src="pica/web/cabin-night.jpg" alt="Green Heaven A-frame cabana glowing at night" loading="lazy" />
             <div>
               <span data-i18n="rooms.card1.tag">Best Seller</span>
               <h3 data-i18n="rooms.card1.title">Forest A-Frame Stay</h3>
@@ -242,7 +265,7 @@
             </div>
           </article>
           <article class="room-card">
-            <img src="pica/web/concept/concept-cabin-daylight.avif" alt="Private A-frame cabana exterior concept" loading="lazy" />
+            <img src="pica/web/cabin-dusk.jpg" alt="Green Heaven A-frame cabana at dusk with warm lights" loading="lazy" />
             <div>
               <span data-i18n="rooms.card2.tag">Jungle View</span>
               <h3 data-i18n="rooms.card2.title">Canopy View Stay</h3>
@@ -262,7 +285,7 @@
             </div>
           </article>
           <article class="room-card">
-            <img src="pica/web/concept/concept-evening-deck.avif" alt="Evening forest stay concept with warm outdoor lighting" loading="lazy" />
+            <img src="pica/web/cabin-daylight.jpg" alt="Green Heaven A-frame cabana in bright daylight" loading="lazy" />
             <div>
               <span data-i18n="rooms.card3.tag">Luxury Escape</span>
               <h3 data-i18n="rooms.card3.title">Evening Glow Retreat</h3>
@@ -363,7 +386,7 @@
           <h2 data-i18n="experience.title">Slow mornings, forest days and glowing nights.</h2>
           <p data-i18n="experience.copy">Enjoy the rhythm of Green Heaven: quiet nature walks, private outdoor moments, local discovery and peaceful evenings in warm timber stays.</p>
         </article>
-        <img src="pica/web/concept/concept-cabin-lounge.avif" alt="Forest-facing cabana lounge concept" loading="lazy" />
+        <img src="pica/web/cabin-bedroom-interior.jpg" alt="Green Heaven luxury A-frame cabana bedroom interior" loading="lazy" />
       </section>
 
       <section class="services" id="activities">
@@ -644,6 +667,7 @@
       </div>
 
       <p class="footer-credit">Design by <a href="https://welcomeweb.shop" target="_blank" rel="noopener noreferrer">welcomeweb.shop</a></p>
+      <p class="footer-staff-login"><a href="https://greenheavenecoresort.com/staff/" target="_blank" rel="noopener noreferrer">Staff Login</a></p>
     </footer>
 
     <script src="script.js"></script>

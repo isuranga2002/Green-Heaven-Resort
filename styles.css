@@ -51,26 +51,24 @@ h3 { color: var(--cream); }
 }
 
 .brand {
-  gap: 14px;
+  gap: 0;
+  align-items: center;
 }
 
-.brand img {
-  width: 66px;
-  height: 66px;
-  padding: 8px;
-  background: #0e2a15;
+.brand-logo-full {
+  /* Full Green Heaven logo image in navbar */
+  width: auto;
+  height: clamp(52px, 6.5vw, 80px);
+  max-width: clamp(160px, 18vw, 240px);
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.45)) brightness(1.12);
+  transition: filter 0.2s ease;
+  background: transparent;
+  padding: 4px 0;
 }
 
-.brand span {
-  color: var(--gold);
-  font-size: clamp(1.35rem, 2vw, 2rem);
-  letter-spacing: 0.25em;
-}
-
-.brand small {
-  color: rgba(240, 236, 227, 0.72);
-  font-size: 0.46rem;
-  letter-spacing: 0.62em;
+.brand-logo-full:hover {
+  filter: drop-shadow(0 2px 12px rgba(201, 169, 110, 0.5)) brightness(1.22);
 }
 
 .site-nav {
@@ -623,9 +621,9 @@ h3 { color: var(--cream); }
     padding: 12px 16px;
   }
 
-  .brand img {
-    width: 50px;
-    height: 50px;
+  .brand-logo-full {
+    height: clamp(44px, 5vw, 62px);
+    max-width: clamp(140px, 14vw, 200px);
   }
 
   .brand span {
@@ -780,7 +778,7 @@ h3 { font-size: 1.55rem; }
   backdrop-filter: blur(18px);
 }
 .brand { display: inline-flex; align-items: center; gap: 9px; min-width: max-content; }
-.brand img { width: 32px; height: 36px; object-fit: contain; }
+.brand img { width: auto; height: clamp(52px, 6.5vw, 80px); max-width: clamp(160px, 18vw, 240px); object-fit: contain; }
 .brand span {
   display: grid;
   font-family: "Cormorant Garamond", "Playfair Display", serif;
@@ -1349,7 +1347,7 @@ h2, h3 { color: var(--ink); }
 }
 
 .brand { gap: 10px; }
-.brand img { width: 38px; height: 38px; padding: 0; background: transparent; }
+.brand img { width: auto; height: clamp(48px, 5.5vw, 72px); max-width: clamp(150px, 16vw, 220px); padding: 0; background: transparent; }
 .brand span { color: var(--gold); font-family: "Cormorant Garamond", "Playfair Display", serif; font-size: 1.15rem; font-weight: 700; letter-spacing: 0.18em; }
 .brand small { color: rgba(240, 236, 227, 0.65); font-size: 0.44rem; letter-spacing: 0.35em; margin-top: 2px; }
 
@@ -1798,7 +1796,7 @@ h2, h3 { color: var(--ink); }
 
 @media (max-width: 640px) {
   .site-header { padding: 8px 12px; }
-  .brand img { width: 32px; height: 32px; }
+  .brand img { width: auto; height: 46px; max-width: 150px; }
   .brand span { font-size: 0.95rem; max-width: 140px; letter-spacing: 0.14em; }
   .brand small { font-size: 0.4rem; letter-spacing: 0.25em; }
   .site-nav { top: 48px; }
@@ -2076,4 +2074,171 @@ h2, h3 { color: var(--ink); }
     width: 50px;
     height: 50px;
   }
+}
+
+/* ===== Booking Choice Modal ===== */
+.booking-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(3, 14, 6, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.28s ease;
+}
+
+.booking-modal-overlay:not([hidden]) {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.booking-modal-overlay[hidden] {
+  display: flex !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.booking-modal {
+  position: relative;
+  width: min(520px, 100%);
+  background: linear-gradient(145deg, #0f2116, #0c1a11);
+  border: 1px solid rgba(201, 169, 110, 0.32);
+  border-radius: 20px;
+  padding: clamp(36px, 5vw, 60px) clamp(30px, 5vw, 56px);
+  box-shadow: 0 40px 120px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,169,110,0.08);
+  text-align: center;
+  transform: translateY(24px) scale(0.97);
+  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.28s ease;
+}
+
+.booking-modal-overlay:not([hidden]) .booking-modal {
+  transform: translateY(0) scale(1);
+}
+
+.booking-modal .kicker {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+}
+
+.booking-modal h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0 0 10px;
+  color: var(--cream);
+}
+
+.booking-modal > p:not(.kicker):not(.booking-modal-note) {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0 0 32px;
+}
+
+.booking-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: color 0.18s, background 0.18s;
+}
+
+.booking-modal-close:hover {
+  color: var(--cream);
+  background: rgba(255,255,255,0.06);
+}
+
+.booking-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.booking-modal-wa,
+.booking-modal-direct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 58px;
+  padding: 0 28px;
+  border-radius: 10px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  text-decoration: none;
+}
+
+.booking-modal-wa {
+  background: #25D366;
+  border: none;
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.28);
+}
+
+.booking-modal-wa:hover {
+  background: #20c45a;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(37, 211, 102, 0.38);
+}
+
+.booking-modal-direct {
+  background: transparent;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  box-shadow: 0 4px 18px rgba(201, 169, 110, 0.12);
+}
+
+.booking-modal-direct:hover {
+  background: rgba(201, 169, 110, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(201, 169, 110, 0.2);
+}
+
+.booking-modal-note {
+  color: var(--muted) !important;
+  font-size: 0.76rem !important;
+  letter-spacing: 0.04em;
+  opacity: 0.8;
+  margin: 0 !important;
+}
+
+/* ===== Footer Staff Login ===== */
+.footer-staff-login {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(201, 169, 110, 0.12);
+}
+
+.footer-staff-login a {
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.18s, color 0.18s;
+}
+
+.footer-staff-login a:hover {
+  color: var(--gold);
+  opacity: 1;
 }

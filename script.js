@@ -7,6 +7,59 @@ const status = document.querySelector(".form-status");
 const languageSelect = document.querySelector("#language-select");
 const whatsappNumber = "94755240716";
 
+// ===== Booking Choice Modal =====
+const bookingModalOverlay = document.querySelector("#booking-modal-overlay");
+const bookingModalTrigger = document.querySelector("#booking-modal-trigger");
+const bookingModalClose = document.querySelector("#booking-modal-close");
+const bookingModalWhatsapp = document.querySelector("#booking-modal-whatsapp");
+
+const openBookingModal = () => {
+  if (bookingModalOverlay) {
+    bookingModalOverlay.removeAttribute("hidden");
+    document.body.style.overflow = "hidden";
+    bookingModalClose?.focus();
+  }
+};
+
+const closeBookingModal = () => {
+  if (bookingModalOverlay) {
+    bookingModalOverlay.setAttribute("hidden", "");
+    document.body.style.overflow = "";
+    bookingModalTrigger?.focus();
+  }
+};
+
+bookingModalTrigger?.addEventListener("click", openBookingModal);
+bookingModalClose?.addEventListener("click", closeBookingModal);
+
+// Close when clicking overlay background
+bookingModalOverlay?.addEventListener("click", (e) => {
+  if (e.target === bookingModalOverlay) closeBookingModal();
+});
+
+// Close on Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && bookingModalOverlay && !bookingModalOverlay.hasAttribute("hidden")) {
+    closeBookingModal();
+  }
+});
+
+// WhatsApp button in modal
+bookingModalWhatsapp?.addEventListener("click", () => {
+  const waMessage = "Hello Green Heaven Eco Resort, I would like to make a booking enquiry.";
+  window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMessage)}`, "_blank", "noopener");
+  closeBookingModal();
+});
+
+// Also handle nav links that use #booking anchor - they scroll to form instead of triggering modal
+document.querySelectorAll('a[href="#booking"]:not([data-package])').forEach((link) => {
+  link.addEventListener("click", (e) => {
+    // Only intercept if it's a direct "Book Now" intent (not a package request link)
+    // Package request links scroll to the form, which is the correct behavior
+  });
+});
+
+
 const translations = {
   en: {
     "nav.home": "Home",
