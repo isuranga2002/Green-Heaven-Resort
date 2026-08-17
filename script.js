@@ -9,12 +9,20 @@ const whatsappNumber = "94755240716";
 
 // ===== Booking Choice Modal =====
 const bookingModalOverlay = document.querySelector("#booking-modal-overlay");
-const bookingModalTrigger = document.querySelector("#booking-modal-trigger");
+const bookingModalTriggers = document.querySelectorAll("[data-booking-modal-trigger]");
 const bookingModalClose = document.querySelector("#booking-modal-close");
 const bookingModalWhatsapp = document.querySelector("#booking-modal-whatsapp");
+const bookingModalDirect = document.querySelector("#booking-modal-direct");
+let activeBookingModalTrigger = null;
 
-const openBookingModal = () => {
+const openBookingModal = (event) => {
   if (bookingModalOverlay) {
+    activeBookingModalTrigger = event?.currentTarget || null;
+    nav?.classList.remove("is-open");
+    header?.classList.remove("menu-active");
+    document.body.classList.remove("nav-open");
+    toggle?.setAttribute("aria-expanded", "false");
+    activeBookingModalTrigger?.setAttribute("aria-expanded", "true");
     bookingModalOverlay.removeAttribute("hidden");
     document.body.style.overflow = "hidden";
     bookingModalClose?.focus();
@@ -25,11 +33,16 @@ const closeBookingModal = () => {
   if (bookingModalOverlay) {
     bookingModalOverlay.setAttribute("hidden", "");
     document.body.style.overflow = "";
-    bookingModalTrigger?.focus();
+    activeBookingModalTrigger?.setAttribute("aria-expanded", "false");
+    if (activeBookingModalTrigger?.classList.contains("mobile-book-button")) toggle?.focus();
+    else activeBookingModalTrigger?.focus();
+    activeBookingModalTrigger = null;
   }
 };
 
-bookingModalTrigger?.addEventListener("click", openBookingModal);
+bookingModalTriggers.forEach((button) => {
+  button.addEventListener("click", openBookingModal);
+});
 bookingModalClose?.addEventListener("click", closeBookingModal);
 
 // Close when clicking overlay background
@@ -50,6 +63,8 @@ bookingModalWhatsapp?.addEventListener("click", () => {
   window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMessage)}`, "_blank", "noopener");
   closeBookingModal();
 });
+
+bookingModalDirect?.addEventListener("click", closeBookingModal);
 
 // Also handle nav links that use #booking anchor - they scroll to form instead of triggering modal
 document.querySelectorAll('a[href="#booking"]:not([data-package])').forEach((link) => {
@@ -1101,4 +1116,3 @@ document.querySelectorAll('input[type="date"]').forEach((input) => {
     }
   });
 });
-

@@ -2242,3 +2242,56 @@ h2, h3 { color: var(--ink); }
   color: var(--gold);
   opacity: 1;
 }
+
+/* Mobile booking choice: opens the same WhatsApp/direct-booking modal as desktop. */
+.mobile-book-button {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .site-nav .mobile-book-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    margin-top: 10px;
+    padding: 0 18px;
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    color: #ffffff;
+    background: var(--gold);
+    font: inherit;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .site-nav .mobile-book-button:active {
+    transform: translateY(1px);
+  }
+
+  .booking-modal-overlay {
+    padding: 12px;
+  }
+
+  .booking-modal {
+    max-height: calc(100dvh - 24px);
+    overflow-y: auto;
+    padding: 36px 18px 24px;
+    border-radius: 16px;
+  }
+
+  .booking-modal > p:not(.kicker):not(.booking-modal-note) {
+    margin-bottom: 22px;
+  }
+
+  .booking-modal-wa,
+  .booking-modal-direct {
+    min-height: 54px;
+    padding: 0 14px;
+    font-size: 0.78rem;
+  }
+}
