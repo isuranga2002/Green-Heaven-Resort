@@ -14,6 +14,7 @@ const bookingModalClose = document.querySelector("#booking-modal-close");
 const bookingModalWhatsapp = document.querySelector("#booking-modal-whatsapp");
 const bookingModalDirect = document.querySelector("#booking-modal-direct");
 let activeBookingModalTrigger = null;
+let pendingBookingWhatsAppMessage = "";
 
 const openBookingModal = (event) => {
   if (bookingModalOverlay) {
@@ -41,7 +42,10 @@ const closeBookingModal = () => {
 };
 
 bookingModalTriggers.forEach((button) => {
-  button.addEventListener("click", openBookingModal);
+  button.addEventListener("click", (event) => {
+    pendingBookingWhatsAppMessage = "";
+    openBookingModal(event);
+  });
 });
 bookingModalClose?.addEventListener("click", closeBookingModal);
 
@@ -59,12 +63,16 @@ document.addEventListener("keydown", (e) => {
 
 // WhatsApp button in modal
 bookingModalWhatsapp?.addEventListener("click", () => {
-  const waMessage = "Hello Green Heaven Eco Resort, I would like to make a booking enquiry.";
+  const waMessage = pendingBookingWhatsAppMessage || "Hello Green Heaven Eco Resort, I would like to make a booking enquiry.";
   window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMessage)}`, "_blank", "noopener");
+  pendingBookingWhatsAppMessage = "";
   closeBookingModal();
 });
 
-bookingModalDirect?.addEventListener("click", closeBookingModal);
+bookingModalDirect?.addEventListener("click", () => {
+  pendingBookingWhatsAppMessage = "";
+  closeBookingModal();
+});
 
 // Also handle nav links that use #booking anchor - they scroll to form instead of triggering modal
 document.querySelectorAll('a[href="#booking"]:not([data-package])').forEach((link) => {
@@ -103,6 +111,7 @@ const translations = {
     "form.package": "Package",
     "form.airport": "Airport pickup",
     "form.bookWhatsapp": "Book via WhatsApp",
+    "form.chooseBooking": "Choose Booking Method",
     "form.sendWhatsapp": "Send via WhatsApp",
     "intro.kicker": "Welcome to Green Heaven Eco Resort",
     "intro.title": "Where eco living meets boutique comfort.",
@@ -278,6 +287,7 @@ const translations = {
     "form.package": "පැකේජය",
     "form.airport": "ගුවන් තොටුපළෙන් රැගෙන ඒම",
     "form.bookWhatsapp": "WhatsApp හරහා වෙන්කරන්න",
+    "form.chooseBooking": "වෙන්කිරීමේ ක්‍රමය තෝරන්න",
     "form.sendWhatsapp": "WhatsApp හරහා යවන්න",
     "intro.kicker": "Green Heaven Eco Resort",
     "intro.title": "ස්වභාවිකත්වය සහ සුවපහසු නවාතැන් එක්වන තැන.",
@@ -453,6 +463,7 @@ const translations = {
     "form.package": "Forfait",
     "form.airport": "Transfert aéroport",
     "form.bookWhatsapp": "Réserver via WhatsApp",
+    "form.chooseBooking": "Choisir le mode de réservation",
     "form.sendWhatsapp": "Envoyer via WhatsApp",
     "intro.kicker": "Green Heaven Eco Resort",
     "intro.title": "L’esprit éco rencontre le confort boutique.",
@@ -628,6 +639,7 @@ const translations = {
     "form.package": "Paket",
     "form.airport": "Flughafentransfer",
     "form.bookWhatsapp": "Über WhatsApp buchen",
+    "form.chooseBooking": "Buchungsart wählen",
     "form.sendWhatsapp": "Über WhatsApp senden",
     "intro.kicker": "Green Heaven Eco Resort",
     "intro.title": "Naturnahes Leben trifft Boutique-Komfort.",
@@ -803,6 +815,7 @@ const translations = {
     "form.package": "套餐",
     "form.airport": "机场接送",
     "form.bookWhatsapp": "通过 WhatsApp 预订",
+    "form.chooseBooking": "选择预订方式",
     "form.sendWhatsapp": "通过 WhatsApp 发送",
     "intro.kicker": "Green Heaven Eco Resort",
     "intro.title": "生态生活与精品舒适在此相遇。",
@@ -1046,7 +1059,6 @@ const formatBookingMessage = ({ name, phone, checkin, checkout, persons, package
 bookingForm?.addEventListener("submit", (event) => {
   event.preventDefault();
   const data = new FormData(bookingForm);
-  const language = currentLanguage();
   const button = bookingForm.querySelector("button");
   const message = formatBookingMessage({
     name: data.get("name"),
@@ -1060,11 +1072,8 @@ bookingForm?.addEventListener("submit", (event) => {
     source: "Hero booking form"
   });
 
-  if (button) button.textContent = getTranslation("status.button", language);
-  openWhatsApp(message);
-  window.setTimeout(() => {
-    if (button) button.textContent = getTranslation("form.bookWhatsapp", language);
-  }, 1600);
+  pendingBookingWhatsAppMessage = message;
+  openBookingModal({ currentTarget: button });
 });
 
 form?.addEventListener("submit", (event) => {
